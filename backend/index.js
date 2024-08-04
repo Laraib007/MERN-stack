@@ -6,6 +6,7 @@ connectToMongoose()
 const app = express()
 const port = 3000
 
+app.use(express.json())
 
 // API Routes
 app.use("/auth/users", require("./routes/users"))
