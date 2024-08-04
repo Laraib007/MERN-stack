@@ -1,8 +1,12 @@
-const express = require('express')
+const express = require('express');
+const Users = require('../modules/Users');
 const router = express.Router();
 
-router.get('/',(req, res)=>{
-    res.json({Message: "Users File is working"})
+router.post('/',(req, res)=>{
+    const user = Users(req.body)
+    user.save
+    res.send(req.body)
+    console.log(req.body)
 })
 
 module.exports = router
