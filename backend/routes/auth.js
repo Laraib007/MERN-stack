@@ -2,6 +2,8 @@ const express = require('express');
 const User = require('../modules/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs');
+
 
 // Validating user inputs but not login
 router.post('/', [
