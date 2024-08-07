@@ -23,9 +23,11 @@ if(user){
     return res.status(404).json({ Msg: "Sorry user with this email is already exist" })
 }
 // creating new user after validating 
+const salt = bcrypt.genSaltSync(10);
+const hash = bcrypt.hashSync(req.body.password, salt);
      user = await User.create({
         name: req.body.name,
-        password: req.body.password,
+        password: hash,
         email: req.body.email
     })
     
