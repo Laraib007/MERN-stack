@@ -12,7 +12,7 @@ router.post('/', [
     if (!errors.isEmpty()) {
         return res.status(404).json({ errors: errors.array() })
     }
-let user = User.findOne({email: req.body.email})
+let user = await User.findOne({email: req.body.email})
 if(user){
     return res.status(404).json({ Msg: "Sorry user with this email is already exist" })
 }
@@ -27,6 +27,7 @@ if(user){
 //     .catch(err => {console.log(err)
 //     res.json({msg: "Please enter a valid emailS"})})
 /*/
+res.json({Nice:" nice"})
  });
 
 module.exports = router
