@@ -3,6 +3,8 @@ const User = require('../modules/User');
 const router = express.Router();
 const { body, validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
+const jwt = require('jsonwebtoken');
+
 
 
 // Validating user inputs but not login
@@ -30,8 +32,14 @@ const hash = bcrypt.hashSync(req.body.password, salt);
         password: hash,
         email: req.body.email
     })
-    
-res.json(user)
+    const data = {
+        user: {
+            id: user.id
+        }
+    }
+    const token = jwt.sign(data, 'shhhhh');
+    console.log(token)
+res.json({token})
 // catching error 
 } catch (error){
     console.error({error: error.message})
