@@ -17,6 +17,8 @@ router.post('/', [
         password: req.body.password,
         email: req.body.email
     }).then(user => res.json(user))
+    .catch(err => {console.log(err)
+    res.json({msg: "Please enter a valid emailS"})})
 });
 
 module.exports = router
