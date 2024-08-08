@@ -82,6 +82,12 @@ console.error({error: error.message})
 res.status(500).send("Some internal error")
 
 }
-
+})
+// authenticate user and login required
+router.post('/getuser', async (req, fetchuser, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(404).json({ errors: errors.array() })
+    }
 })
 module.exports = router
