@@ -38,8 +38,8 @@ const hash = bcrypt.hashSync(req.body.password, salt);
         }
     }
     const token = jwt.sign(data, 'shhhhh');
-    console.log(token)
-res.json({token})
+    console.log(user)
+res.json({user})
 // catching error 
 } catch (error){
     console.error({error: error.message})
