@@ -46,7 +46,8 @@ res.json({user})
     res.status(500).send("Some internal error")
 
 }
-// Creating user but not login required
+});
+// login user but not login required
 router.post('/login', [
     body('email', "Enter a valid Email").isEmail(),
     body('password', "Password can not be blanked").exists()
@@ -56,8 +57,8 @@ router.post('/login', [
     if (!errors.isEmpty()) {
         return res.status(404).json({ errors: errors.array() })
     }
+    const {email, password} = req.body;
     try{
-const {email, password} = req.body;
  const user = await User.findOne({email})
  if(!user){
     res.status(400).json({error: "Please enter valid credentials"})
@@ -82,9 +83,4 @@ res.status(500).send("Some internal error")
 }
 
 })
-
-
-
-
-});
 module.exports = router
