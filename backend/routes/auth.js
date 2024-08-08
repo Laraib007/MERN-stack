@@ -7,8 +7,8 @@ const jwt = require('jsonwebtoken');
 
 
 
-// Validating user inputs but not login
-router.post('/', [
+// Creating user but not login required
+router.post('/createUser', [
     body('name', "Enter a valid Name").isLength({ min: 3 }),
     body('email', "Enter a valid Email").isEmail(),
     body('password', "Password must be 5 letters").isLength({ min: 5 })
@@ -46,5 +46,20 @@ res.json({token})
     res.status(500).send("some error occurd")
 
 }
+// Creating user but not login required
+router.post('/login', [
+    body('email', "Enter a valid Email").isEmail(),
+    body('password', "Password can not be blanked").exists()
+],
+ async (req, res) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(404).json({ errors: errors.array() })
+    }
+})
+
+
+
+
 });
 module.exports = router
