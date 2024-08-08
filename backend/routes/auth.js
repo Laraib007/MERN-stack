@@ -43,7 +43,7 @@ res.json({token})
 // catching error 
 } catch (error){
     console.error({error: error.message})
-    res.status(500).send("some error occurd")
+    res.status(500).send("Some internal error")
 
 }
 // Creating user but not login required
@@ -56,6 +56,31 @@ router.post('/login', [
     if (!errors.isEmpty()) {
         return res.status(404).json({ errors: errors.array() })
     }
+    try{
+const {email, password} = req.body;
+ const user = await User.findOne({email})
+ if(!user){
+    res.status(400).json({error: "Please enter valid credentials"})
+ }
+ const passwordCompare = await bcrypt.compare(password, user.password)
+ if(!passwordCompare){
+    res.status(400).json({error: "Please enter valid credentials"})
+ }
+
+ const data = {
+    user: {
+        id: user.id
+    }
+}
+const token = jwt.sign(data, 'shhhhh');
+res.json({token})
+// catching error 
+} catch (error){
+console.error({error: error.message})
+res.status(500).send("Some internal error")
+
+}
+
 })
 
 
