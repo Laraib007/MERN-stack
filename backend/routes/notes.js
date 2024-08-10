@@ -19,8 +19,8 @@ router.get('/fetchallnotes',fetchuser, async (req, res)=>{
     }
 })
 
-// Route 2: Featching all the Notes Type: Get /addnote:: Login Required
-router.get('/addnote',fetchuser, [
+// Route 2: Featching all the Notes Type: post /addnote:: Login Required
+router.post('/addnote',fetchuser, [
     body('title', "Enter a valid Title").isLength({ min: 3 }),
     body('descripition', "Descripition must be 5 letters").isLength({ min: 5 })
 ], async (req, res)=>{
@@ -45,4 +45,12 @@ router.get('/addnote',fetchuser, [
      
      }
  })
+
+ 
+// Route 3: Updating an existing Note ReqType: Put /addnote:: Login Required
+router.post('/addnote',fetchuser, async (req, res)=>{
+    const {descripition, title, tag} = req.body
+
+})
+
 module.exports = router
