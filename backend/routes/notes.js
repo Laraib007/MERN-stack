@@ -48,9 +48,23 @@ router.post('/addnote',fetchuser, [
 
  
 // Route 3: Updating an existing Note ReqType: Put /addnote:: Login Required
-router.post('/addnote',fetchuser, async (req, res)=>{
+router.post('/updatenote/:id',fetchuser, async (req, res)=>{
     const {descripition, title, tag} = req.body
+    const newNote= {}
+    if(descripition){newNote.descripition = descripition}
+    if(title){newNote.title = title}
+    if(tag){newNote.tag = tag}
 
+    // Finding Note by Id and if note not fond returning from here.
+let note = await Note.findById(req.params.id)
+if(!note){
+    return res.status(404).send("not Found")
+}
+if(note.user.toString() !== req.user.id){
+    return res.status(401).send("not Allowed")
+}
+ note = await Note.findByIdAndUpdate(req.params.id, {$set: newNote}, {new:true})
+ res.send(note)
 })
 
 module.exports = router
