@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router();
+const fetchuser = require('../middleware/fetchuser');
 
-router.get('/',(req, res)=>{
-    res.json({Message: "Notes File is working"})
+router.get('/',fetchuser, (req, res)=>{
+
+    res.json()
 })
 module.exports = router
