@@ -79,7 +79,7 @@ router.delete('/deletnote/:id',fetchuser, async (req, res)=>{
         return res.status(401).send("not Allowed") 
     }
     note = await Note.findByIdAndDelete(req.params.id)
-    res.send(note)
+    res.json({Laraib: "Your Note Deleted sucessfully!"}    )
 })
 
 module.exports = router
