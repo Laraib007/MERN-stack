@@ -1,7 +1,7 @@
 import NoteContext from "./NoteContext";
 
 
-const useNoteContext = (props) =>{
+const Notestate = (props) =>{
     const state ={
         "name": "Labi",
         "class": "5b"
@@ -13,4 +13,4 @@ const useNoteContext = (props) =>{
     )
 } 
 
-export default useNoteContext;
+export default Notestate;

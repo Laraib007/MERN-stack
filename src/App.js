@@ -7,13 +7,13 @@ import {
 import About from './components/About';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
-import useNoteContext from './contextApi/notes/useNoteContext';
+import Notestate from './contextApi/notes/Notestate';
 
 
 function App() {
 
   return (
-    <useNoteContext>
+    <Notestate>
     <Router>
       <>
       <div className="App">
@@ -31,7 +31,7 @@ function App() {
       </div>
       </>
     </Router>
-    </useNoteContext>
+    </Notestate>
   );
 }
 
