@@ -3,17 +3,13 @@ import noteContext from '../contextApi/notes/noteContext'
 
 
 function About() {
-  const a = useContext(noteContext)
+  let a = useContext(noteContext);
 useEffect(() => {
-  first
-
-  return () => {
-    second
-  }
+ a.update();
 }, [])
 
   return (
-    <div><h1>This is About {a.name}</h1></div>
+    <div><h1>This is About {a.state.name}</h1></div>
   )
 }
 
