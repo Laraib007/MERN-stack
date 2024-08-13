@@ -8,7 +8,7 @@ const useNoteContext = (props) =>{
     }
     return(
         <NoteContext.Provider value={state} >
-            {props.childern}
+            {props.children}
         </NoteContext.Provider>
     )
 } 
