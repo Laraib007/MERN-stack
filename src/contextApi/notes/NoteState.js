@@ -8,13 +8,18 @@ const NoteState =(props)=>{
     }
     let [state, setState] = useState(s1)
     const update = ()=>{
-      setTimeout(() => {
+      setInterval(() => {
         setState({
-            "name": "LRB",
-            "class": "12"
+                "name": "Labi",
+                "class": "10b"
         })
-        
       }, 1000);
+      setInterval(() => {
+        setState({
+                "name": "Lrb",
+                "class": "12b"
+        })
+      }, 1500);
     }
     return(
         <noteContext.Provider value={{state, update}}>
