@@ -5,7 +5,9 @@ const Home = () => {
     <div>
   
       <h1>This is My iNotebook</h1>
-      <form>
+
+      <h2>Add a New Note</h2>
+      <form className='my-3'>
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
@@ -21,6 +23,9 @@ const Home = () => {
   </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+
+<h2>Your All Notes</h2>
+{/* -----Ending Div------ */}
     </div>
   )
 }
