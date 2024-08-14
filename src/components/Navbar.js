@@ -8,7 +8,7 @@ const Navbar = () => {
 
 React.useEffect(() => {
 }, [location]);
-console.log(location)
+console.log(location.pathname)
   return (
     <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div class="container-fluid">
@@ -19,10 +19,10 @@ console.log(location)
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className={`nav-link ${location.pathname=== "/"? "active":""} `} aria-current="page" to="/">Home</Link>
         </li>
         <li class="nav-item">
-          <Link class="nav-link" to="/about">About</Link>
+          <Link className={`nav-link ${location.pathname=== "/about"? "active":""} `} to="/about">About</Link>
         </li>
       </ul>
     </div>
