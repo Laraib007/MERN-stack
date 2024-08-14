@@ -1,7 +1,8 @@
 import React, { useContext } from 'react'
-import NoteState from '../contextApi/notes/noteState'
+import noteContext from '../contextApi/notes/noteContext';
+
 const Home = () => {
-  const context = useContext(NoteState)
+  const context = useContext(noteContext)
   const {notes, setNotes} = context;
   return (
     <div>
@@ -24,6 +25,9 @@ const Home = () => {
 </form>
 
 <h2>Your All Notes</h2>
+{notes.map((note)=>{
+  return note.title 
+})}
 {/* -----Ending Div------ */}
     </div>
   )
