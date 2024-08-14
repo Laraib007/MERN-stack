@@ -1,6 +1,8 @@
-import React from 'react'
-
+import React, { useContext } from 'react'
+import NoteState from '../contextApi/notes/noteState'
 const Home = () => {
+  const context = useContext(NoteState)
+  const {notes, setNotes} = context;
   return (
     <div>
   
