@@ -17,9 +17,6 @@ function App() {
         
           <div className="App">
             <Navbar />
-            <head>
-              <title>iNootebook</title>
-            </head>
             <div className='container my-3'>
             <Routes>
               <Route path="/" element={<Home />} />

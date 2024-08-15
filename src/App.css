@@ -11,14 +11,11 @@
   height: 40vmin;
   pointer-events: none;
 }
-i {
+i:hover {
   cursor: pointer;
   color: red;
 }
-.curserHover :hover{
-  cursor: pointer;
-  color: green;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
