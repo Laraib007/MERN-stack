@@ -11,7 +11,7 @@ function Notes() {
     <h2>Your All Notes</h2>
     <div className=' row ' style={{marginLeft: "7rem"}}>
     {notes.map((note)=>{
-    return <Noteitem  note={note}/> 
+    return  <Noteitem key={note._id} note={note}/> 
     })}</div>
     </>
   )

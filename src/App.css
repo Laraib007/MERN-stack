@@ -16,6 +16,9 @@ i:hover {
   color: red;
 }
 
+.hoverClass:hover{
+  box-shadow: 0 0 20px 7px #687f8b;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

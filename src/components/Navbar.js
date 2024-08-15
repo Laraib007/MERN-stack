@@ -8,7 +8,6 @@ const Navbar = () => {
 
 React.useEffect(() => {
 }, [location]);
-console.log(location.pathname)
   return (
     <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div className="container-fluid">

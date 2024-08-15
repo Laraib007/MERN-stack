@@ -10,12 +10,12 @@ const Home = () => {
       <h2>Add a New Note</h2>
       <form className=' text-start'>
   <div className="form-group ">
-    <label className='my-1' for="exampleInputEmail1">Email address</label>
+    <label className='my-1' htmlFor="exampleInputEmail1">Email address</label>
     <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email"/>
     <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
   <div className="form-group">
-    <label  className='my-1' for="exampleInputPassword1">Password</label>
+    <label  className='my-1' htmlFor="exampleInputPassword1">Password</label>
     <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
   </div>
 
