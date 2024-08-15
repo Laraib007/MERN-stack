@@ -7,10 +7,13 @@ function Notes() {
   const context = useContext(noteContext)
   const {notes, setNotes} = context;
   return (
-    <div className=' row'><h2>Your All Notes</h2>
+    <>
+    <h2>Your All Notes</h2>
+    <div className=' row ' style={{marginLeft: "7rem"}}>
     {notes.map((note)=>{
     return <Noteitem  note={note}/> 
     })}</div>
+    </>
   )
 }
 
