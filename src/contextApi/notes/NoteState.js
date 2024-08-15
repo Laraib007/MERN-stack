@@ -7,7 +7,7 @@ const NoteState =(props)=>{
         {
           "_id": "66b7139ee91c79ea532317bc",
           "user": "66b510b62df46b7a73015ff0",
-          "title": "Testing my second note updated",
+          "title": "Testing my First note updated",
           "descripition": "My Second Note updated",
           "tag": "Personal",
           "date": "2024-08-10T07:15:42.971Z",
@@ -25,7 +25,16 @@ const NoteState =(props)=>{
           {
             "_id": "66b7139ee91c79ea532317bc",
             "user": "66b510b62df46b7a73015ff0",
-            "title": "Testing my second note updated",
+            "title": "Testing my Third note updated",
+            "descripition": "My Second Note updated",
+            "tag": "Personal",
+            "date": "2024-08-10T07:15:42.971Z",
+            "__v": 0
+          },
+          {
+            "_id": "66b7139ee91c79ea532317bc",
+            "user": "66b510b62df46b7a73015ff0",
+            "title": "Testing my Fourth note updated",
             "descripition": "My Second Note updated",
             "tag": "Personal",
             "date": "2024-08-10T07:15:42.971Z",

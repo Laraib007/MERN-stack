@@ -26,7 +26,7 @@ const Home = () => {
 
 <h2>Your All Notes</h2>
 {notes.map((note)=>{
-  return note.title 
+return <div><h5>{note.title}</h5><p>{note.descripition}</p></div> 
 })}
 {/* -----Ending Div------ */}
     </div>
