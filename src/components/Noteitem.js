@@ -1,6 +1,8 @@
 import React from 'react'
 
 function Noteitem(props) {
+  
+
     const {note} = props
   return (
     <div className="card p-4 m-3 col-md-3 hoverClass"   >
