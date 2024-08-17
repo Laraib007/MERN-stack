@@ -1,6 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import noteContext from '../contextApi/notes/noteContext';
+
+
 
 const Addnote = () => {
+    const context = useContext(noteContext)
+  const {Addnote} = context;
+
+  
   return (
     <div>
        <h1>This is My iNotebook</h1>
