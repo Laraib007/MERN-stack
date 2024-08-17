@@ -1,17 +1,20 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 
 
 
 const Addnote = () => {
     const context = useContext(noteContext)
-  const {Addnote} = context;
+  const {addNote} = context;
 
-  const handleSubmit=()=>{
+    const [Note, setNote] = useState({title: "", description: "", tag: "default"})
 
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    addNote(Note.title, Note.description, Note.tag)
   }
-  const onChange = ()=>{
-    
+  const onChange = (e)=>{
+    setNote({...Note, [e.target.name]: e.target.value})
   } 
 
 
