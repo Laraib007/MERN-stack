@@ -7,7 +7,15 @@ const Addnote = () => {
     const context = useContext(noteContext)
   const {Addnote} = context;
 
-  
+  const handleSubmit=()=>{
+
+  }
+  const onChange = ()=>{
+    
+  } 
+
+
+
   return (
     <div>
        <h1>This is My iNotebook</h1>
