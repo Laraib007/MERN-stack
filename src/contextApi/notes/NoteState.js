@@ -58,7 +58,7 @@ const NoteState =(props)=>{
       }
       
     // Delete a Note
-      const deleteNote =()=>{
+      const deleteNote =(id)=>{
 
       }
     // Edit a Note
