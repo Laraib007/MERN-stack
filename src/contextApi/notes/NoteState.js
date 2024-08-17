@@ -5,7 +5,7 @@ const NoteState =(props)=>{
 
     const InitialNotes = [
         {
-          "_id": "66b7139ee91c79ea532sd317bc",
+          "_id": "66b7139ee91c79ea532sd317bc3",
           "user": "66b510b62df46b7a73015ff0",
           "title": "Testing my First note updated",
           "descripition": "My Second Note updated",
@@ -14,7 +14,7 @@ const NoteState =(props)=>{
           "__v": 0
         },
         {
-            "_id": "66b7139ee91c79sdfea532317bc",
+            "_id": "66b7139ee91c79sdfea532317bc2",
             "user": "66b510b62df46b7a73015ff0",
             "title": "Testing my second note updated",
             "descripition": "My Second Note updated",
@@ -23,7 +23,7 @@ const NoteState =(props)=>{
             "__v": 0
           },
           {
-            "_id": "66b7139ewere91c79ea532317bc",
+            "_id": "66b7139ewere91c79ea532317bc1",
             "user": "66b510b62df46b7a73015ff0",
             "title": "Testing my Third note updated",
             "descripition": "My Second Note updated",
@@ -32,7 +32,7 @@ const NoteState =(props)=>{
             "__v": 0
           },
           {
-            "_id": "66b7139ee91c6579ea532317bc",
+            "_id": "66b7139ee91c6579ea532317bc4",
             "user": "66b510b62df46b7a73015ff0",
             "title": "Testing my Fourth note updated",
             "descripition": "My Second Note updated",
@@ -59,7 +59,7 @@ const NoteState =(props)=>{
       
     // Delete a Note
       const deleteNote =(id)=>{
-
+console.log(id)
       }
     // Edit a Note
       const editNote=()=>{
