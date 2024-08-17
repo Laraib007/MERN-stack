@@ -54,8 +54,9 @@ const NoteState =(props)=>{
           "date": "2024-08-10T07:15:42.971Z",
           "__v": 0
         }
+        setNotes(notes.concat(Note))
       }
-
+      
     // Delete a Note
       const deleteNote =()=>{
 
@@ -66,7 +67,7 @@ const NoteState =(props)=>{
       }
 
     return(
-        <noteContext.Provider value={{notes, setNotes}}>
+        <noteContext.Provider value={{notes, addNote, deleteNote, editNote}}>
             {props.children}
         </noteContext.Provider>
     )
