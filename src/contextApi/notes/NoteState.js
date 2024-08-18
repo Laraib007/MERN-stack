@@ -63,7 +63,17 @@ const NoteState =(props)=>{
         setNotes(newNotes)
       }
     // Edit a Note
-      const editNote=(id, title, descripition, tag)=>{
+      const editNote= async(id, title, descripition, tag)=>{
+        // API call
+        const response = await fetch(`${host}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ title, descripition, tag }),
+        });
+        const res = response.json()
+
         for (let i = 0; i < notes.length; i++) {
           const element = notes[i];
           if(element._id === id){
