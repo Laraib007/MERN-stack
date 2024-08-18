@@ -1,11 +1,14 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
 
 function Notes() {
     
   const context = useContext(noteContext)
-  const {notes} = context;
+  const {notes, getAllnotes} = context;
+  useEffect(() => {
+    getAllnotes()
+  }, [])
   return (
     <>
     <h2>Your All Notes</h2>
