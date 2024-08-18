@@ -2,7 +2,7 @@ import { useState } from "react";
 import noteContext from "./noteContext";
 
 const NoteState =(props)=>{
-
+  const host = "http://localhost:5000"
     const InitialNotes = [
         {
           "_id": "66b7139ee91c79ea532sd317bc3",
@@ -63,8 +63,15 @@ const NoteState =(props)=>{
         setNotes(newNotes)
       }
     // Edit a Note
-      const editNote=()=>{
-
+      const editNote=(id, title, descripition, tag)=>{
+        for (let i = 0; i < notes.length; i++) {
+          const element = notes[i];
+          if(element._id === id){
+            element.title = title;
+            element.descripition = descripition;
+            element.tag = tag;
+          }
+        }
       }
 
     return(
