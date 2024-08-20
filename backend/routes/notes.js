@@ -22,18 +22,18 @@ router.get('/fetchallnotes',fetchuser, async (req, res)=>{
 // Route 2: Featching all the Notes Type: post /addnote:: Login Required
 router.post('/addnote',fetchuser, [
     body('title', "Enter a valid Title").isLength({ min: 3 }),
-    body('descripition', "Descripition must be 5 letters").isLength({ min: 5 })
+    body('description', "description must be 5 letters").isLength({ min: 5 })
 ], async (req, res)=>{
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(404).json({ errors: errors.array() })
     }
 
-    const {descripition, title, tag} = req.body
+    const {description, title, tag} = req.body
     try {
 
         const note = new Note({
-            descripition, title, tag, user: req.user.id
+            description, title, tag, user: req.user.id
         })
         const addNote = await note.save()
 
@@ -49,9 +49,9 @@ router.post('/addnote',fetchuser, [
  
 // Route 3: Updating an existing Note ReqType: Put /updatenode:: Login Required
 router.put('/updatenote/:id',fetchuser, async (req, res)=>{
-    const {descripition, title, tag} = req.body;
+    const {description, title, tag} = req.body;
     const newNote = {};
-    if(descripition){newNote.descripition = descripition}
+    if(description){newNote.description = description}
     if(title){newNote.title = title}
     if(tag){newNote.tag = tag}
 

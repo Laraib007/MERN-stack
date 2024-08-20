@@ -9,56 +9,57 @@ function Notes() {
   useEffect(() => {
     getAllnotes()
   }, [])
-
+  const ref = useRef(null)
   
-  const [Note, setNote] = useState({etitle: "", edescripition: "", etag: ""})
+  const [Note, setNote] = useState({etitle: "", edescription: "", etag: ""})
   const upDatenote =(currentNote)=>{
     ref.current.click()
-    setNote({etitle: currentNote.title, edescripition: currentNote.descripition, etag: currentNote.tag})
-    console.log(currentNote.tag)
+    setNote({etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag})
   }
-  const ref = useRef()
+ 
 
   const handleSubmit=(e)=>{
     e.preventDefault()
+    console.log("Note Updated ", Note)
   }
   const onChange = (e)=>{
     setNote({...Note, [e.target.name]: e.target.value})
+    console.log( setNote({...Note, [e.target.name]: e.target.value}))
   } 
 
   return (
     <>
 
-<button ref={ref} type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+<div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div className="modal-body">
       <form className=' text-start'>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Title</label>
-    <input type="text" className="form-control" id="title" name="title" value={Note.etitle} aria-describedby="emailHelp" placeholder="Enter Title" onChange={onChange} />
+    <input type="text" className="form-control" id="etitle" name="etitle" value={Note.etitle} aria-describedby="emailHelp" placeholder="Enter Title" onChange={onChange} />
   </div>
   <div className="form-group">
     <label className='my-1' htmlFor="exampleInputPassword1">Description</label>
-    <input type="text" className="form-control" id="description" name="description" value={Note.edescripition}  placeholder="description" onChange={onChange} />
+    <input type="text" className="form-control" id="edescription" name="edescription" value={Note.edescription}  placeholder="description" onChange={onChange} />
   </div>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Tag</label>
-    <input type="text" className="form-control" id="tag" name="tag"value={Note.etag} placeholder="Enter Tag" onChange={onChange} />
+    <input type="text" className="form-control" id="etag" name="etag"value={Note.etag} placeholder="Enter Tag" onChange={onChange} />
   </div>
  </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save Note</button>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" className="btn btn-primary" onClick={handleSubmit}>Save Note</button>
       </div>
     </div>
   </div>
