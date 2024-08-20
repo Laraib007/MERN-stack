@@ -11,10 +11,10 @@ function Notes() {
   }, [])
 
   
-  const [Note, setNote] = useState({etitle: "", edescription: "", etag: ""})
+  const [Note, setNote] = useState({etitle: "", edescripition: "", etag: ""})
   const upDatenote =(currentNote)=>{
     ref.current.click()
-    setNote({etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag})
+    setNote({etitle: currentNote.title, edescripition: currentNote.descripition, etag: currentNote.tag})
     console.log(currentNote.tag)
   }
   const ref = useRef()
@@ -48,7 +48,7 @@ function Notes() {
   </div>
   <div className="form-group">
     <label className='my-1' htmlFor="exampleInputPassword1">Description</label>
-    <input type="text" className="form-control" id="description" name="description" value={Note.edescription}  placeholder="description" onChange={onChange} />
+    <input type="text" className="form-control" id="description" name="description" value={Note.edescripition}  placeholder="description" onChange={onChange} />
   </div>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Tag</label>
