@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from 'react'
+import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
 
@@ -10,14 +10,26 @@ function Notes() {
     getAllnotes()
   }, [])
 
-  const upDatenote =()=>{
+  
+  const [Note, setNote] = useState({etitle: "", edescription: "", etag: ""})
+  const upDatenote =(currentNote)=>{
     ref.current.click()
+    setNote({etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag})
+    console.log(currentNote.tag)
   }
   const ref = useRef()
+
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+  }
+  const onChange = (e)=>{
+    setNote({...Note, [e.target.name]: e.target.value})
+  } 
+
   return (
     <>
 
-<button ref={ref} type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button ref={ref} type="button" class="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
 
@@ -29,7 +41,20 @@ function Notes() {
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+      <form className=' text-start'>
+  <div className="form-group ">
+    <label className='my-1' htmlFor="exampleInputEmail1">Title</label>
+    <input type="text" className="form-control" id="title" name="title" value={Note.etitle} aria-describedby="emailHelp" placeholder="Enter Title" onChange={onChange} />
+  </div>
+  <div className="form-group">
+    <label className='my-1' htmlFor="exampleInputPassword1">Description</label>
+    <input type="text" className="form-control" id="description" name="description" value={Note.edescription}  placeholder="description" onChange={onChange} />
+  </div>
+  <div className="form-group ">
+    <label className='my-1' htmlFor="exampleInputEmail1">Tag</label>
+    <input type="text" className="form-control" id="tag" name="tag"value={Note.etag} placeholder="Enter Tag" onChange={onChange} />
+  </div>
+ </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
