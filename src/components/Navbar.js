@@ -25,8 +25,8 @@ React.useEffect(() => {
         </li>
       </ul>
     </div>
-    <Link class="btn btn-primary mx-1"  to="/Login" role="button">Login</Link>
-    <Link class="btn btn-primary mx-1" to="/Signup" role="button">Signup</Link>
+    <Link className="btn btn-primary mx-1"  to="/Login" role="button">Login</Link>
+    <Link className="btn btn-primary mx-1" to="/Signup" role="button">Signup</Link>
   </div>
 </nav>
   )
