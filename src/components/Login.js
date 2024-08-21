@@ -1,7 +1,9 @@
 import React from 'react'
 
 const Login = () => {
-
+const handleSubmit =(e)=>{
+    e.preventDefault()
+}
   return (
     <div>
       <form onSubmit={handleSubmit}>
