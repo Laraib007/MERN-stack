@@ -1,9 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Login = () => {
-const handleSubmit =(e)=>{
+
+
+    
+const [credentials, setCredentials] = useState({ email: credentials.email, password: credentials.password})
+const handleSubmit=(e)=>{
     e.preventDefault()
-}
+  }
+  const onChange = (e)=>{
+    setCredentials({...credentials, [e.target.name]: e.target.value})
+  } 
   return (
     <div>
       <form onSubmit={handleSubmit}>
