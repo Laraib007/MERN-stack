@@ -12,7 +12,7 @@ function Noteitem(props) {
   <div className="card-body ">
     <h5 className="card-title">{note.title}</h5>
     <p className="card-text">{note.description}</p>
-    <p><i class="fa-solid fa-tag">&nbsp;</i>{note.tag}</p>
+    <p><i className="fa-solid fa-tag">&nbsp;</i>{note.tag}</p>
     <i className="fa-solid fa-trash mx-2 " onClick={()=>{deleteNote(note._id)}}></i>
     <i className="fa-solid fa-pen-to-square mx-2" onClick={()=>{upDatenote(note)}}></i>
     
