@@ -8,6 +8,8 @@ import About from './components/About';
 import Home from './components/Home';
 import Navbar from './components/Navbar';
 import NoteState from "./contextApi/notes/noteState";
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 function App() {
 
@@ -21,6 +23,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Signup" element={<Signup />} />
             </Routes>
             </div>
           </div>
