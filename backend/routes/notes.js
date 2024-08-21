@@ -19,7 +19,7 @@ router.get('/fetchallnotes',fetchuser, async (req, res)=>{
     }
 })
 
-// Route 2: Featching all the Notes Type: post /addnote:: Login Required
+// Route 2: Add  the Notes Type: post /addnote:: Login Required
 router.post('/addnote',fetchuser, [
     body('title', "Enter a valid Title").isLength({ min: 3 }),
     body('description', "description must be 5 letters").isLength({ min: 5 })
