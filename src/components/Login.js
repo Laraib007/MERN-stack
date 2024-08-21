@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
 const Login = () => {
-
+    let history = useHistory();
     
     const [credentials, setCredentials] = useState({ email: '', password: ''})
    
@@ -14,8 +15,14 @@ const handleSubmit= async(e)=>{
           },
         body: JSON.stringify({ email: credentials.email, password : credentials.password }),
       });
-      const res = await response.json()
-      console.log(res)
+      const json = await response.json()
+      if(json.success){
+            localStorage.setItem("token", json.token)
+            history.push("/")
+      } else{
+        alert(json)
+      }
+      console.log(json)
   }
   const onChange = (e)=>{
     setCredentials({...credentials, [e.target.name]: e.target.value})
