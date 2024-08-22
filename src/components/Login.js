@@ -3,11 +3,11 @@ import { Link, useNavigate  } from "react-router-dom";
 
 const Login = () => {
     let Navigate  = useNavigate ();
-    const ref = useRef()
-
-    const onClick =()=>{
-      ref.current.click()
-    }
+    
+const [state, setstate] = useState()
+  const onChange2 =()=>{
+setstate()
+  }
     const [credentials, setCredentials] = useState({ email: '', password: ''})
    
 const handleSubmit= async(e)=>{
@@ -22,7 +22,7 @@ const handleSubmit= async(e)=>{
       const json = await response.json()
       if(json.success){
             localStorage.setItem("token", json.token)
-            Navigate("/home")
+            Navigate('/')
       } else{
         alert(json.error)
       }
@@ -43,8 +43,7 @@ const handleSubmit= async(e)=>{
     <label htmlFor="exampleInputPassword1" className="form-label"><h4>Password</h4></label>
     <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password}/>
   </div>
-  <Link  onClick={onClick} className={`btn btn-primary mx-1`}  to="/home" role="button">Logout</Link>
-  <button ref={ref} type="submit" className="btn btn-primary" to='/home' >Submit</button>
+  <button onChange={onChange2} type="submit" className="btn btn-primary">Submit</button>
 </form>
     </div>
   )

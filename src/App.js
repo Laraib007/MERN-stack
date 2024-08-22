@@ -22,7 +22,7 @@ import { useState } from 'react';
             <Navbar />
             <div className='container my-3'>
             <Routes>
-              <Route path="/home" element={login ? <Home /> : <Login /> } />
+              <Route path="/" element={login ? <Home /> : <Login /> } />
               <Route path="/about" element={<About />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
