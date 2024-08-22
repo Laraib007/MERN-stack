@@ -8,6 +8,7 @@ const Navbar = () => {
 
 React.useEffect(() => {
 }, [location]);
+const login = localStorage.getItemItem("token")
   return (
     <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div className="container-fluid">
@@ -25,7 +26,7 @@ React.useEffect(() => {
         </li>
       </ul>
     </div>
-    <Link className="btn btn-primary mx-1"  to="/Login" role="button">Login</Link>
+    <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to="/Login" role="button">Login</Link>
     <Link className="btn btn-primary mx-1" to="/Signup" role="button">Signup</Link>
   </div>
 </nav>
