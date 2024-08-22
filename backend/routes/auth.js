@@ -39,7 +39,7 @@ const hash = bcrypt.hashSync(req.body.password, salt);
     }
     const token = await jwt.sign(data, 'shhhhh');
     success = true
-    console.log(success, token)
+    console.log({success, token})
 res.json({user})
 // catching error 
 } catch (error){
