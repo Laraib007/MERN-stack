@@ -9,6 +9,7 @@ const Navbar = () => {
 React.useEffect(() => {
 }, [location]);
 const login = localStorage.getItem("token")
+const logout=() => localStorage.removeItem("token")
   return (
     <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div className="container-fluid">
@@ -28,7 +29,7 @@ const login = localStorage.getItem("token")
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to="/Login" role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} to="/" role="button">Logout</Link>
+    <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} role="button">Logout</Link>
   </div>
 </nav>
   )
