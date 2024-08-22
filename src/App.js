@@ -10,10 +10,10 @@ import Navbar from './components/Navbar';
 import NoteState from "./contextApi/notes/noteState";
 import Login from './components/Login';
 import Signup from './components/Signup';
-import { useState } from 'react';
 
  function App () {
   const login = localStorage.getItem("token")
+  
   return (
     <NoteState>
       <Router>
@@ -24,7 +24,7 @@ import { useState } from 'react';
             <Routes>
               <Route path="/" element={login ? <Home /> : <Login /> } />
               <Route path="/about" element={<About />} />
-              <Route path="/Login" element={<Login />} />
+              <Route path="/Login" element={login ? <Home /> : <Login />} />
               <Route path="/Signup" element={<Signup />} />
             </Routes>
             </div>

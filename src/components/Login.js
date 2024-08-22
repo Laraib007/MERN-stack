@@ -1,16 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate  } from "react-router-dom";
+import { Link, Route, useNavigate  } from "react-router-dom";
 import Home from './Home';
 
 const Login = () => {
     let Navigate  = useNavigate ();
-const onClick =()=>{
-  
-  setTimeout(() => {
-    
-  window.location.reload()
-  }, 2000);
-}
 
 
     const [credentials, setCredentials] = useState({ email: '', password: ''})
@@ -48,7 +41,8 @@ const handleSubmit= async(e)=>{
     <label htmlFor="exampleInputPassword1" className="form-label"><h4>Password</h4></label>
     <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password}/>
   </div>
-  <button  type="submit" onClick={onClick} className="btn btn-primary">Submit</button>
+  <button  type="submit" className="btn btn-primary">Submit</button>
+  
 </form>
     </div>
   )
