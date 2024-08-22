@@ -32,20 +32,20 @@ return (
   <div style={{width: "25rem", height: "31rem"}} className={`card mt-4 card-header nav container`}>
     <form style={{marginTop: "2rem"}} onSubmit={handleSubmit}>
 <div className="mb-3">
-  <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
+  <label htmlFor="exampleInputEmail1" className="form-label"><h5>Name</h5></label>
   <input type="text" className="form-control" id="name" name='name' aria-describedby="emailHelp"  onChange={onChange} value={credentials.name} required minLength={5}/>
 </div>
 <div className="mb-3">
-  <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+  <label htmlFor="exampleInputEmail1" className="form-label"><h5>Email address</h5></label>
   <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp"  onChange={onChange} value={credentials.email} required />
   <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
 </div>
 <div className="mb-3">
-  <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+  <label htmlFor="exampleInputPassword1" className="form-label"><h5>Password</h5></label>
   <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password} required minLength={5} />
 </div>
 <div className="mb-3">
-  <label htmlFor="exampleInputPassword1" className="form-label">Confirm Password</label>
+  <label htmlFor="exampleInputPassword1" className="form-label"><h5>Confirm Password</h5></label>
   <input type="password" className="form-control" name='cpassword' id="cpassword" onChange={onChange}  value={credentials.cpassword}/>
 </div>
 <button type="submit" className="btn btn-primary">Submit</button>

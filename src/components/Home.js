@@ -3,6 +3,7 @@ import Notes from './Notes'
 import Addnote from './Addnote'
 
 const Home = () => {
+  
   return (
     <div>
       <Addnote />

@@ -29,7 +29,7 @@ const logout=() => localStorage.removeItem("token")
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to="/Login" role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} role="button">Logout</Link>
+    <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
   )

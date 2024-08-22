@@ -13,6 +13,7 @@ import Signup from './components/Signup';
 
 function App() {
 
+  const login = localStorage.getItem("token")
   return (
     <NoteState>
       <Router>
