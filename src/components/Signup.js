@@ -37,12 +37,12 @@ return (
 </div>
 <div className="mb-3">
   <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-  <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp"  onChange={onChange} value={credentials.email} required minLength={5}/>
+  <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp"  onChange={onChange} value={credentials.email} required />
   <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
 </div>
 <div className="mb-3">
   <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-  <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password} required />
+  <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password} required minLength={5} />
 </div>
 <div className="mb-3">
   <label htmlFor="exampleInputPassword1" className="form-label">Confirm Password</label>
