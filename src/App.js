@@ -11,9 +11,7 @@ import NoteState from "./contextApi/notes/noteState";
 import Login from './components/Login';
 import Signup from './components/Signup';
 
-function App() {
-
-  const login = localStorage.getItem("token")
+ function App () {
   return (
     <NoteState>
       <Router>
@@ -22,7 +20,7 @@ function App() {
             <Navbar />
             <div className='container my-3'>
             <Routes>
-              <Route path="/" element={<Home />} />
+              <Route path="/" element={ <Home />} />
               <Route path="/about" element={<About />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
