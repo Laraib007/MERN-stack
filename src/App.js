@@ -12,6 +12,8 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 
  function App () {
+  
+  const login = localStorage.getItem("token")
   return (
     <NoteState>
       <Router>
@@ -20,7 +22,7 @@ import Signup from './components/Signup';
             <Navbar />
             <div className='container my-3'>
             <Routes>
-              <Route path="/" element={ <Home />} />
+              <Route path="/" element={login ? <Home /> : <Login /> } />
               <Route path="/about" element={<About />} />
               <Route path="/Login" element={<Login />} />
               <Route path="/Signup" element={<Signup />} />
