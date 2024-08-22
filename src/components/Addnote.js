@@ -27,11 +27,11 @@ const Addnote = () => {
 <h2>Add a New Note</h2>
 <form className=' text-start'>
   <div className="form-group ">
-    <label className='my-1' htmlFor="exampleInputEmail1">Title</label>
+    <label className='my-1' htmlFor="exampleInputEmail1">Title<span style={{color: 'red'}}>*</span></label>
     <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" placeholder="Enter Title" value={Note.title}  onChange={onChange} />
   </div>
   <div className="form-group">
-    <label className='my-1' htmlFor="exampleInputPassword1">Description</label>
+    <label className='my-1' htmlFor="exampleInputPassword1">Description<span style={{color: 'red'}}>*</span></label>
     <input type="text" className="form-control" id="description" name="description" placeholder="description"  value={Note.description} onChange={onChange} />
   </div>
   <div className="form-group ">
