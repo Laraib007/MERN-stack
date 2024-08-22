@@ -28,15 +28,15 @@ const handleSubmit= async(e)=>{
     setCredentials({...credentials, [e.target.name]: e.target.value})
   } 
   return (
-    <div style={{width: "25rem", height: "30rem"}} className={`card card-header nav container`}>
-      <form onSubmit={handleSubmit}>
+    <div style={{width: "25rem", height: "27rem"}} className={`card mt-4 card-header nav container`}>
+      <form style={{marginTop: "4rem"}} onSubmit={handleSubmit}>
   <div className="mb-3">
-    <label htmlFor="exampleInputEmail1" className="form-label"><h3>Email address</h3></label>
+    <label htmlFor="exampleInputEmail1" className="form-label"><h4>Email address</h4></label>
     <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp"  onChange={onChange} value={credentials.email}/>
     <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
   </div>
   <div className="mb-3">
-    <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+    <label htmlFor="exampleInputPassword1" className="form-label"><h4>Password</h4></label>
     <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password}/>
   </div>
   <button type="submit" className="btn btn-primary">Submit</button>
