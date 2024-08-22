@@ -29,8 +29,8 @@ const onChange = (e)=>{
   setCredentials({...credentials, [e.target.name]: e.target.value})
 } 
 return (
-  <div>
-    <form onSubmit={handleSubmit}>
+  <div style={{width: "25rem", height: "31rem"}} className={`card mt-4 card-header nav container`}>
+    <form style={{marginTop: "2rem"}} onSubmit={handleSubmit}>
 <div className="mb-3">
   <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
   <input type="text" className="form-control" id="name" name='name' aria-describedby="emailHelp"  onChange={onChange} value={credentials.name} required minLength={5}/>
