@@ -12,7 +12,7 @@ router.post('/createUser', [
     body('email', "Enter a valid Email").isEmail(),
     body('password', "Password must be 5 letters").isLength({ min: 5 })
 ], async (req, res) => {
-    const success = false
+    let success = false
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(404).json({success, errors: errors.array() })
@@ -39,8 +39,8 @@ const hash = bcrypt.hashSync(req.body.password, salt);
     }
     const token = await jwt.sign(data, 'shhhhh');
     success = true
-    console.log({success, token})
-res.json({user})
+    console.log(success, token)
+res.json({success, token})
 // catching error 
 } catch (error){
     console.error({error: error.message})
