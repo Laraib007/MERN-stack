@@ -19,9 +19,10 @@ const handleSubmit= async(e)=>{
     const json = await response.json()
     if(json.success){
           localStorage.setItem("token", json.token)
+          props.showAlert('Account Created Sucessfully', "success")
           Navigate("/")
     } else{
-      alert(json.Msg)
+      props.showAlert('Please Enter correct details', "danger")
     }
     console.log(json)
 }
