@@ -10,8 +10,20 @@ import Navbar from './components/Navbar';
 import NoteState from "./contextApi/notes/noteState";
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Alert from './components/Aleart';
 
  function App () {
+  const [alert, setAlert] = useState(null);
+
+  const showAlert = (message, type)=>{
+      setAlert({
+        msg: message,
+        type: type
+      })
+      setTimeout(() => {
+          setAlert(null);
+      }, 1500);
+  }
   const login = localStorage.getItem("token")
   
   return (
@@ -20,6 +32,7 @@ import Signup from './components/Signup';
         
           <div className="App">
             <Navbar />
+            <Alert alert={alert}/>
             <div className='container my-3'>
             <Routes>
               <Route path="/" element={login ? <Home /> : <Login /> } />
