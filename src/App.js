@@ -12,7 +12,7 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Alert from './components/Aleart';
 
- function App () {
+ function App (props) {
   const [alert, setAlert] = useState(null);
 
   const showAlert = (message, type)=>{
