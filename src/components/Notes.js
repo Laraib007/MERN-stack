@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
 
-function Notes() {
+function Notes(props) {
     
   const context = useContext(noteContext)
   const {notes, getAllnotes, editNote} = context;
@@ -22,7 +22,7 @@ function Notes() {
   const handleSubmit=(e)=>{
     editNote(Note.id, Note.etitle, Note.edescription, Note.etag)
     refClose.current.click()
-    console.log("Note Updated ", Note)
+    props.showAlert('Note Deleted Sucessfully', "success")
   }
   const onChange = (e)=>{
     setNote({...Note, [e.target.name]: e.target.value})
@@ -70,7 +70,7 @@ function Notes() {
     <h2>Your All Notes</h2>
     <div className=' row ' style={{marginLeft: "7rem"}}>
     {notes.map((note)=>{
-    return  <Noteitem key={note._id} upDatenote={upDatenote} note={note}/> 
+    return  <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/> 
     })}</div>
     </>
   )
