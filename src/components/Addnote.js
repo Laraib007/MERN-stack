@@ -3,7 +3,7 @@ import noteContext from '../contextApi/notes/noteContext';
 
 
 
-const Addnote = () => {
+const Addnote = (props) => {
     const context = useContext(noteContext)
   const {addNote} = context;
 
@@ -13,6 +13,7 @@ const Addnote = () => {
     e.preventDefault()
     addNote(Note.title, Note.description, Note.tag)
     setNote({ title: "", description: "", tag: ""})
+    props.showAlert('Note Added Sucessfully', "success")
   }
   const onChange = (e)=>{
     setNote({...Note, [e.target.name]: e.target.value})
