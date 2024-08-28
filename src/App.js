@@ -32,7 +32,7 @@ import { useState } from 'react';
       <Router>
         
           <div className="App">
-            <Navbar />
+            <Navbar showAlert={showAlert} />
             <Alert alert={alert}/>
             <div className='container my-3'>
             <Routes>
