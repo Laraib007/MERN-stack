@@ -22,7 +22,7 @@ function Notes(props) {
   const handleSubmit=(e)=>{
     editNote(Note.id, Note.etitle, Note.edescription, Note.etag)
     refClose.current.click()
-    props.showAlert('Note Deleted Sucessfully', "success")
+    props.showAlert('Note Updated Sucessfully', "success")
   }
   const onChange = (e)=>{
     setNote({...Note, [e.target.name]: e.target.value})
