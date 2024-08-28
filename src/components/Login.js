@@ -5,7 +5,6 @@ import Home from './Home';
 const Login = (props) => {
     let Navigate  = useNavigate ();
 
-
     const [credentials, setCredentials] = useState({ email: '', password: ''})
    
 const handleSubmit= async(e)=>{
@@ -21,7 +20,7 @@ const handleSubmit= async(e)=>{
       if(json.success){
             localStorage.setItem("token", json.token)
             Navigate('/')
-            .showAlert('Logined Sucessfully', "success")
+            props.showAlert('Logined Sucessfully', "success")
       } else{
         alert(json.error)
       }
