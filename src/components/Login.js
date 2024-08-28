@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, Route, useNavigate  } from "react-router-dom";
 import Home from './Home';
 
-const Login = (props.showAlert) => {
+const Login = (props) => {
     let Navigate  = useNavigate ();
 
 
@@ -21,7 +21,7 @@ const handleSubmit= async(e)=>{
       if(json.success){
             localStorage.setItem("token", json.token)
             Navigate('/')
-            showAlert('Logined Sucessfully', "success")
+            .showAlert('Logined Sucessfully', "success")
       } else{
         alert(json.error)
       }

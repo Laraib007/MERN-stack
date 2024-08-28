@@ -11,6 +11,7 @@ import NoteState from "./contextApi/notes/noteState";
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Alert from './components/Aleart';
+import { useState } from 'react';
 
  function App (props) {
   const [alert, setAlert] = useState(null);
