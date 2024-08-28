@@ -10,7 +10,9 @@ const Navbar = (props) => {
 React.useEffect(() => {
 }, [location]);
 const login = localStorage.getItem("token")
-const logout=() => localStorage.removeItem("token")
+const logout=() => {
+  localStorage.removeItem("token")
+  props.showAlert('Logout Sucessfully', "success")}
   return (
     <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div className="container-fluid">
