@@ -21,6 +21,7 @@ const handleSubmit= async(e)=>{
       if(json.success){
             localStorage.setItem("token", json.token)
             Navigate('/')
+            showAlert('Logined Sucessfully', "success")
       } else{
         alert(json.error)
       }
