@@ -22,7 +22,7 @@ const handleSubmit= async(e)=>{
             Navigate('/')
             props.showAlert('Logined Sucessfully', "success")
       } else{
-        alert(json.error)
+        props.showAlert('Invalid Credentials', "danger")
       }
       console.log(json)
   }
