@@ -36,10 +36,10 @@ import { useState } from 'react';
             <Alert alert={alert}/>
             <div className='container my-3'>
             <Routes>
-              <Route path="/" element={login ? <Home /> : <Login /> } />
-              <Route path="/about" element={<About />} />
-              <Route path="/Login" element={login ? <Home /> : <Login />} />
-              <Route path="/Signup" element={<Signup />} />
+              <Route path="/" element={login ? <Home showAlert={showAlert} /> : <Login showAlert={showAlert} /> } />
+              <Route path="/about" element={<About showAlert={showAlert} />} />
+              <Route path="/Login" element={login ? <Home showAlert={showAlert} /> : <Login showAlert={showAlert} />} />
+              <Route path="/Signup" element={<Signup showAlert={showAlert} />} />
             </Routes>
             </div>
           </div>

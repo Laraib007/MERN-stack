@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, useLocation } from "react-router-dom";
 
 
-const Navbar = () => {
+const Navbar = (props) => {
 
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
