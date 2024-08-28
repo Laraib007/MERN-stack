@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link, Route, useNavigate  } from "react-router-dom";
 import Home from './Home';
 
-const Login = () => {
+const Login = (props.showAlert) => {
     let Navigate  = useNavigate ();
 
 
