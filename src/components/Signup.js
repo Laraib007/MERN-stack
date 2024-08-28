@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useNavigate  } from "react-router-dom";
 
 
-const Signup = () => {
+const Signup = (props) => {
   let Navigate  = useNavigate ();
     
   const [credentials, setCredentials] = useState({name: '', email: '', password: ''})
