@@ -44,7 +44,7 @@ const handleSubmit= async(e)=>{
   </div>
   <div className='my-3'>
 <Link  to="/Signup">New User? Click here to Signup Now</Link></div>
-  <button  type="submit" className="btn btn-primary">Submit</button>
+  <button  type="submit" className="btn btn-primary">Login</button>
   
 </form>
     </div>
