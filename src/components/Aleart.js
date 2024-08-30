@@ -7,7 +7,7 @@ function Alert(props) {
     }
     return (
         <center>
-        <div style={{height: '50px', width: "24%", marginLeft: "36%",marginTop: "-3%", position:"fixed"}}>
+        <div style={{height: '50px', width: "25%",marginTop: "-2%", position:"fixed"}}>
         {props.alert && <div className={` container  alert alert-${props.alert.type} alert-dismissible fade show`} role="alert">
            <strong>{capitalize(props.alert.type)}</strong>: {props.alert.msg} 
         </div>}
