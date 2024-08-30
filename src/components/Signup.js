@@ -28,10 +28,6 @@ const handleSubmit= async(e)=>{
 }
 const onChange = (e)=>{
   setCredentials({...credentials, [e.target.name]: e.target.value})
-  if(credentials.password === credentials.cpassword){
-    alert("sucess")
-  }
-  else alert("password and confirm password not match")
 } 
 return (
   <div style={{width: "25rem", height: "35rem"}} className={`card mt-4 card-header nav container`}>
