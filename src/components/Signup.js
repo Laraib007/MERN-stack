@@ -36,24 +36,24 @@ const onChange = (e)=>{
   setCredentials({...credentials, [e.target.name]: e.target.value})
 } 
 return (
-  <div style={{width: "25rem", height: "37rem"}} className={`card mt-4 card-header nav container`}>
-    <h2 className='my-2'>Signup to Continiue iNotebook Journey!</h2>
+  <div style={{width: "25rem", height: "33rem"}} className={`card mt-4 card-header nav container`}>
+    <h3 className='my-2'>Signup to Continiue iNotebook Journey!</h3>
     <form onSubmit={handleSubmit}>
-<div className="mb-2">
-  <label htmlFor="exampleInputEmail1" className="form-label"><h5>Name</h5></label>
+<div className="mb-3">
+  <label htmlFor="exampleInputEmail1" ><h5>Name</h5></label>
   <input type="text" className="form-control" id="name" name='name' aria-describedby="emailHelp"  onChange={onChange} value={credentials.name} required minLength={5}/>
 </div>
-<div className="mb-2">
-  <label htmlFor="exampleInputEmail1" className="form-label"><h5>Email address</h5></label>
+<div className="mb-1">
+  <label htmlFor="exampleInputEmail1" ><h5>Email address</h5></label>
   <input type="email" className="form-control" id="email" name='email' aria-describedby="emailHelp"  onChange={onChange} value={credentials.email} required />
   <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
 </div>
-<div className="mb-2">
-  <label htmlFor="exampleInputPassword1" className="form-label"><h5>Password</h5></label>
+<div className="mb-1">
+  <label htmlFor="exampleInputPassword1" ><h5>Password</h5></label>
   <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password} required minLength={5} />
 </div>
-<div className="mb-2">
-  <label htmlFor="exampleInputPassword1" className="form-label"><h5>Confirm Password</h5></label>
+<div className="mb-1">
+  <label htmlFor="exampleInputPassword1" ><h5>Confirm Password</h5></label>
   <input type="password" className="form-control" name='cpassword' id="cpassword" onChange={onChange}  value={credentials.cpassword}/>
 </div>
 <div className='my-3'>
