@@ -42,6 +42,8 @@ const handleSubmit= async(e)=>{
     <label htmlFor="exampleInputPassword1" className="form-label"><h4>Password</h4></label>
     <input type="password" className="form-control" name='password' id="password" onChange={onChange}  value={credentials.password}/>
   </div>
+  <div className='my-3'>
+<Link  to="/Signup">New User? Click here to Signup Now</Link></div>
   <button  type="submit" className="btn btn-primary">Submit</button>
   
 </form>
