@@ -36,7 +36,7 @@ const onChange = (e)=>{
   setCredentials({...credentials, [e.target.name]: e.target.value})
 } 
 return (
-  <div style={{width: "25rem", height: "35rem"}} className={`card mt-4 card-header nav container`}>
+  <div style={{width: "25rem", height: "37rem"}} className={`card mt-4 card-header nav container`}>
     <h2 className='my-2'>Signup to Continiue iNotebook Journey!</h2>
     <form onSubmit={handleSubmit}>
 <div className="mb-2">
@@ -56,7 +56,8 @@ return (
   <label htmlFor="exampleInputPassword1" className="form-label"><h5>Confirm Password</h5></label>
   <input type="password" className="form-control" name='cpassword' id="cpassword" onChange={onChange}  value={credentials.cpassword}/>
 </div>
-<Link to="/Login" class="btn btn-primary stretched-link">Already Registerd? Login Now!</Link>
+<div className='my-3'>
+<Link  to="/Login">Already Registerd? Login Now!</Link></div>
 <button type="submit" className="btn btn-primary">Submit</button>
 </form>
   </div>
