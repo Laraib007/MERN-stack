@@ -30,7 +30,7 @@ const handleSubmit= async(e)=>{
     setCredentials({...credentials, [e.target.name]: e.target.value})
   } 
   return (
-    <div style={{width: "25rem", height: "27rem"}} className={`card card-header nav container`}>
+    <div style={{width: "25rem", height: "27rem", marginTop:"6rem"}} className={`card card-header nav container`}>
       <h2 className='my-2'>Login to Continiue iNotebook Journey!</h2>
       <form style={{marginTop: "1rem"}} onSubmit={handleSubmit}>
   <div className="mb-3">
