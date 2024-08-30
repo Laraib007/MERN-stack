@@ -14,7 +14,8 @@ const logout=() => {
   localStorage.removeItem("token")
   props.showAlert('Logout Sucessfully', "success")}
   return (
-    <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+    <div style={{position:"fixed", width:"100%"}}>
+    <nav  className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div className="container-fluid">
     <Link className="navbar-brand" to={loginToken? "/": "/Login"}>iNotebook</Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,6 +36,7 @@ const logout=() => {
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
+</div>
   )
 }
 
