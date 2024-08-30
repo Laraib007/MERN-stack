@@ -14,7 +14,7 @@ const logout=() => {
   localStorage.removeItem("token")
   props.showAlert('Logout Sucessfully', "success")}
   return (
-    <div style={{position:"fixed", width:"100%"}}>
+    <div style={{position:"fixed", width:"100%", marginTop:"-1%"}}>
     <nav  className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
   <div className="container-fluid">
     <Link className="navbar-brand" to={loginToken? "/": "/Login"}>iNotebook</Link>
