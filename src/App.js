@@ -34,7 +34,7 @@ import { useState } from 'react';
           <div className="App">
             <Navbar showAlert={showAlert} />
             <Alert alert={alert}/>
-            <div className='container my-3'>
+            <div style={{marginTop:"rem"}} className='container my-3 '>
             <Routes>
               <Route path="/" element={login ? <Home showAlert={showAlert} /> : <Login showAlert={showAlert} /> } />
               <Route path="/about" element={<About showAlert={showAlert} />} />

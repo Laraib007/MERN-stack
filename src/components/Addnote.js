@@ -22,7 +22,7 @@ const Addnote = (props) => {
 
 
   return (
-    <div>
+    <div style={{marginTop:"8rem"}}>
        <h1>This is My iNotebook</h1>
 
 <h2>Add a New Note</h2>
