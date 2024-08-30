@@ -36,7 +36,7 @@ const onChange = (e)=>{
   setCredentials({...credentials, [e.target.name]: e.target.value})
 } 
 return (
-  <div style={{width: "25rem", height: "33rem"}} className={`card mt-4 card-header nav container`}>
+  <div style={{width: "25rem", height: "33rem"}} className={`card mt-3 card-header nav container`}>
     <h3 className='my-2'>Signup to Continiue iNotebook Journey!</h3>
     <form onSubmit={handleSubmit}>
 <div className="mb-3">
@@ -58,7 +58,7 @@ return (
 </div>
 <div className='my-3'>
 <Link  to="/Login">Already Registerd? Login Now!</Link></div>
-<button type="submit" className="btn btn-primary">Submit</button>
+<button type="submit" className="btn btn-primary">Singup</button>
 </form>
   </div>
 )
