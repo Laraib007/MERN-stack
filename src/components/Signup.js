@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate  } from "react-router-dom";
+import { Link, useNavigate  } from "react-router-dom";
 
 
 const Signup = (props) => {
@@ -17,6 +17,12 @@ const handleSubmit= async(e)=>{
       body: JSON.stringify({name: credentials.name, email: credentials.email, password : credentials.password }),
     });
     const json = await response.json()
+    
+    if(credentials.password !== credentials.cpassword){
+      return props.showAlert('Password and Confirm password not match', "danger")
+    }
+     
+  
     if(json.success){
           localStorage.setItem("token", json.token)
           props.showAlert('Account Created Sucessfully', "success")
@@ -50,6 +56,7 @@ return (
   <label htmlFor="exampleInputPassword1" className="form-label"><h5>Confirm Password</h5></label>
   <input type="password" className="form-control" name='cpassword' id="cpassword" onChange={onChange}  value={credentials.cpassword}/>
 </div>
+<Link to="/Login" class="btn btn-primary stretched-link">Already Registerd? Login Now!</Link>
 <button type="submit" className="btn btn-primary">Submit</button>
 </form>
   </div>
