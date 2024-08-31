@@ -27,11 +27,12 @@ function Noteitem(props) {
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <h5>Are You Sure to Want to Delete This Note?</h5>
+              <h5><strong>Are You Sure You Want to Delete This Note?</strong></h5>
+              <p><strong>DISCLAIMER: </strong>Deleted Note won't be recover!</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary" onClick={()=>{deleteNote(note._id)}}>Delete Note</button>
+              <button type="button" class="btn btn-danger" onClick={()=>{deleteNote(note._id); props.showAlert('Note Deleted Sucessfully', "success")}} data-bs-dismiss="modal">Delete Note</button>
             </div>
           </div>
         </div>
@@ -45,7 +46,6 @@ function Noteitem(props) {
           <p><i className="fa-solid fa-tag">&nbsp;</i>{note.tag}</p>
           <i className="fa-solid fa-trash mx-2 " onClick={() => {
             deleteNoteFunc();
-            props.showAlert('Note Deleted Sucessfully', "success");
           }}></i>
           <i className="fa-solid fa-pen-to-square mx-2" onClick={() => { upDatenote(note) }}></i>
 
