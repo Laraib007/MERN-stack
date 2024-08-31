@@ -6,7 +6,6 @@ function Noteitem(props) {
   const {deleteNote} = context;
 
     const {note, upDatenote} = props
-    
      
   return (
     
