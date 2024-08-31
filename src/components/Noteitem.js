@@ -1,13 +1,13 @@
 import React, { useContext } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
-import DeleteNote from './deleteNote';
 
 function Noteitem(props) {
   const context = useContext(noteContext)
   const {deleteNote} = context;
-
+const deleteNoteFunc =()=>{
+  deleteNote(note._id)
+}
     const {note, upDatenote} = props
-     
   return (
     
     <div className="card p-1 m-2 col-md-3 hoverClass"   >
@@ -15,7 +15,8 @@ function Noteitem(props) {
     <h5 className="card-title">{note.title}</h5>
     <p className="card-text">{note.description}</p>
     <p><i className="fa-solid fa-tag">&nbsp;</i>{note.tag}</p>
-    <i className="fa-solid fa-trash mx-2 " onClick={()=>DeleteNote}></i>
+    <i className="fa-solid fa-trash mx-2 " onClick={()=> {deleteNoteFunc(); 
+    props.showAlert('Note Deleted Sucessfully', "success");}}></i>
     <i className="fa-solid fa-pen-to-square mx-2" onClick={()=>{upDatenote(note)}}></i>
     
   </div>
