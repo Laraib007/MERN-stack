@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
+import noteContext from '../contextApi/notes/noteContext';
 
 
 const Navbar = (props) => {
+
+  
+const context = useContext(noteContext)
+const { getUser } = context;
+
+console.log(getUser())
+
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
 
@@ -32,6 +40,7 @@ const logout=() => {
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
+    <p>{getUser.name}</p>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
