@@ -36,7 +36,7 @@ const onChange = (e)=>{
   setCredentials({...credentials, [e.target.name]: e.target.value})
 } 
 return (
-  <div style={{width: "25rem", height: "33rem"}} className={`card mt-2 card-header nav container`}>
+  <div style={{width: "25rem", height: "33rem", marginTop:"5.5rem"}} className={`card card-header nav container`}>
     <h3 className='my-2'>Signup to Continiue iNotebook Journey!</h3>
     <form onSubmit={handleSubmit}>
 <div className="mb-3">
