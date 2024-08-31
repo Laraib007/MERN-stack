@@ -90,11 +90,11 @@ const NoteState = (props) => {
       },
     });
     const res = await response.json()
-    const userName = res.user.name;
-    return  <Navbar userName={userName}/>
+    localStorage.setItem("name", res.user.name)
   }
+  
   return (
-    <noteContext.Provider value={{ notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
+    <noteContext.Provider value={{ notes, addNote, deleteNote, editNote, getAllnotes ,getUser}}>
       {props.children}
     </noteContext.Provider>
   )

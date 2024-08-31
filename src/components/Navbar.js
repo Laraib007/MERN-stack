@@ -4,18 +4,18 @@ import noteContext from '../contextApi/notes/noteContext';
 
 
 const Navbar =  (props) => {
-
-//   const context = useContext(noteContext)
-//   const {getUser} = context;
-
-// const {userName} = props
-// console.log(getUser.userName)
+  
+  const context = useContext(noteContext)
+  const {getUser} = context;
+  getUser()
+  const userName = localStorage.getItem("name")
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
 
 React.useEffect(() => {
 }, [location]);
 const login = localStorage.getItem("token")
+localStorage.setItem("name", '')
 const logout=() => {
   localStorage.removeItem("token")
   props.showAlert('Logout Sucessfully', "success")}
@@ -39,7 +39,7 @@ const logout=() => {
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <p style={{color:"white"}}>UserName</p>
+    <p style={{color:"white"}}>{userName}</p>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
