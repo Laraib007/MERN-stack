@@ -79,7 +79,7 @@ const NoteState = (props) => {
   }
 
   // Get User
-  const getUser = async () => {
+  const getUser = async (userName) => {
     // API call
     const response = await fetch(`${host}/api/auth/getuser`, {
       method: "POST",
@@ -89,8 +89,7 @@ const NoteState = (props) => {
       },
     });
     const res = await response.json()
-    const userName = res.user.name;
-    return userName;
+    return userName = res.user.name;
     // console.log(userName)
   }
   return (

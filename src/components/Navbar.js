@@ -1,16 +1,19 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
-import noteContext from '../contextApi/notes/noteContext';
 
 
 const Navbar = (props) => {
 
+
+  const response =  fetch(`http://localhost:5000/api/auth/getuser`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token": localStorage.getItem('token')
+    }    
+  });
+  const res = response.json()
   
-const context = useContext(noteContext)
-const { getUser } = context;
-const {userName} = getUser
-console.log(userName)
-getUser()
 
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
@@ -41,7 +44,7 @@ const logout=() => {
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <p>{getUser.name}</p>
+    <p style={{color:"white"}}>UserName</p>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
