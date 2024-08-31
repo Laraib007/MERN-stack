@@ -5,7 +5,7 @@ import Noteitem from './Noteitem';
 function Notes(props) {
     
   const context = useContext(noteContext)
-  const {notes, getAllnotes, editNote} = context;
+  const {notes, getAllnotes, editNote,} = context;
   
   
   useEffect(() => {
