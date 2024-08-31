@@ -1,15 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useRef } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 
 function Noteitem(props) {
   const context = useContext(noteContext)
   const {deleteNote} = context;
-const deleteNoteFunc =()=>{
 
-  
-  return(
+  const deleteNoteRef = useRef(null)
+
+const deleteNoteFunc =()=>{
+  deleteNoteRef.current.click()
+ 
+}
+    const {note, upDatenote} = props
+  return (
+    <>
     <div>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+<button ref={deleteNoteRef} type="button" class=" d-none btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
 
@@ -25,17 +31,12 @@ const deleteNoteFunc =()=>{
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary" onClick={deleteNote(note._id)}>Delete Note</button>
+        <button type="button" class="btn btn-primary" onClick={deleteNote(note._id)} >Delete Note</button>
       </div>
     </div>
   </div>
 </div>
     </div>
-  )
-}
-    const {note, upDatenote} = props
-  return (
-    
     <div className="card p-1 m-2 col-md-3 hoverClass"   >
   <div className="card-body ">
     <h5 className="card-title">{note.title}</h5>
@@ -47,6 +48,7 @@ const deleteNoteFunc =()=>{
     
   </div>
 </div>
+</>
   )
 }
 
