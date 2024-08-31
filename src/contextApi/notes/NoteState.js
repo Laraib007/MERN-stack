@@ -89,7 +89,9 @@ const NoteState = (props) => {
       },
     });
     const res = await response.json()
-    console.log(res.user.name)
+    const userName = res.user.name;
+    return userName;
+    // console.log(userName)
   }
   return (
     <noteContext.Provider value={{ notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>

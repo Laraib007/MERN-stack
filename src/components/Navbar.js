@@ -8,8 +8,9 @@ const Navbar = (props) => {
   
 const context = useContext(noteContext)
 const { getUser } = context;
-
-console.log(getUser())
+const {userName} = getUser
+console.log(userName)
+getUser()
 
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
