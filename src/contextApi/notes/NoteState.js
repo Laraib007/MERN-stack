@@ -90,7 +90,8 @@ const NoteState = (props) => {
       },
     });
     const res = await response.json()
-    localStorage.setItem("name", res.user.name)
+    const user = await res.user.name
+    localStorage.setItem("name", user)
   }
   
   return (

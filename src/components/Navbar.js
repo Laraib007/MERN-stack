@@ -1,13 +1,9 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
-import noteContext from '../contextApi/notes/noteContext';
 
 
 const Navbar =  (props) => {
-  
-  const context = useContext(noteContext)
-  const {getUser} = context;
-  getUser()
+
   const userName = localStorage.getItem("name")
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
@@ -15,7 +11,6 @@ const Navbar =  (props) => {
 React.useEffect(() => {
 }, [location]);
 const login = localStorage.getItem("token")
-localStorage.setItem("name", '')
 const logout=() => {
   localStorage.removeItem("token")
   props.showAlert('Logout Sucessfully', "success")}

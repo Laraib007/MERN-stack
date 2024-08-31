@@ -1,9 +1,16 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import { Link, Route, useNavigate  } from "react-router-dom";
 import Home from './Home';
+import noteContext from '../contextApi/notes/noteContext';
 
 
 const Login = (props) => {
+
+  const context = useContext(noteContext)
+  const {getUser} = context;
+
+
+
     let Navigate  = useNavigate ();
 
     const [credentials, setCredentials] = useState({ email: '', password: ''})
@@ -45,7 +52,7 @@ const handleSubmit= async(e)=>{
   </div>
   <div className='my-3'>
 <Link  to="/Signup">New User? Click here to Signup Now</Link></div>
-  <button  type="submit" className="btn btn-primary">Login</button>
+  <button  type="submit" className="btn btn-primary" onClick={()=>{getUser()}}>Login</button>
   
 </form>
     </div>
