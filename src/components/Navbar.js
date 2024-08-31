@@ -3,10 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 
 
 const Navbar = (props) => {
-  const response = fetch(`http://localhost:5000/api/auth/getuser`, async (req, res) => {
-    console.log(res)
-  })
-   
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
 
