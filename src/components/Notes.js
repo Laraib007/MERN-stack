@@ -6,9 +6,12 @@ function Notes(props) {
     
   const context = useContext(noteContext)
   const {notes, getAllnotes, editNote} = context;
+  
+  
   useEffect(() => {
     getAllnotes()
   }, [])
+ 
   const ref = useRef(null)
   const refClose = useRef(null)
 
@@ -28,7 +31,6 @@ function Notes(props) {
     setNote({...Note, [e.target.name]: e.target.value})
     console.log( setNote({...Note, [e.target.name]: e.target.value}))
   } 
-
   return (
     <>
 
@@ -70,7 +72,7 @@ function Notes(props) {
     <h2>Your All Notes</h2>
     <div className=' row ' style={{marginLeft: "7rem"}}>
     {notes.map((note)=>{
-    return  <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/> 
+    return <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/>  
     })}</div>
     </>
   )
