@@ -71,7 +71,9 @@ function Notes(props) {
 
     <h2>Your All Notes</h2>
     <div className=' row ' style={{marginLeft: "7rem"}}>
+     <p style={{width: "88%"}}>{notes.length === 0 && "No Note added yet"}</p> 
     {notes.map((note)=>{
+   
     return <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/>  
     })}</div>
     </>
