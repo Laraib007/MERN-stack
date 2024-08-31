@@ -4,7 +4,6 @@ import { Link, useLocation } from "react-router-dom";
 
 const Navbar =  (props) => {
 
-  const userName = localStorage.getItem("name")
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
 
@@ -34,7 +33,7 @@ const logout=() => {
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <p style={{color:"white"}}>{userName}</p>
+    <p style={{color:"white"}}></p>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
