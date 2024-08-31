@@ -1,5 +1,6 @@
 import { useState } from "react";
 import noteContext from "./noteContext";
+import Navbar from "../../components/Navbar";
 
 const NoteState = (props) => {
   const host = "http://localhost:5000"
@@ -79,7 +80,7 @@ const NoteState = (props) => {
   }
 
   // Get User
-  const getUser = async (userName) => {
+  const getUser = async () => {
     // API call
     const response = await fetch(`${host}/api/auth/getuser`, {
       method: "POST",
@@ -89,8 +90,8 @@ const NoteState = (props) => {
       },
     });
     const res = await response.json()
-    return userName = res.user.name;
-    // console.log(userName)
+    const userName = res.user.name;
+    return  <Navbar userName={userName}/>
   }
   return (
     <noteContext.Provider value={{ notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>

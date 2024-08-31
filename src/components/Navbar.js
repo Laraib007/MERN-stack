@@ -1,20 +1,15 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
+import noteContext from '../contextApi/notes/noteContext';
 
 
-const Navbar = (props) => {
+const Navbar =  (props) => {
 
+//   const context = useContext(noteContext)
+//   const {getUser} = context;
 
-  const response =  fetch(`http://localhost:5000/api/auth/getuser`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "auth-token": localStorage.getItem('token')
-    }    
-  });
-  const res = response.json()
-  
-
+// const {userName} = props
+// console.log(getUser.userName)
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
 
