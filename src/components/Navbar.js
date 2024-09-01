@@ -1,9 +1,12 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
+import noteContext from '../contextApi/notes/noteContext';
 
 
 const Navbar =  (props) => {
 
+  const context = useContext(noteContext)
+  const {userName} = context;
   const loginToken = localStorage.getItem("token")
   let location = useLocation();
 
@@ -33,7 +36,7 @@ const logout=() => {
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <p style={{color:"white"}}></p>
+    <p style={{color:"white"}}>{login? userName: " "}</p>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
