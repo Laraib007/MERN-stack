@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import noteContext from '../contextApi/notes/noteContext';
+import UserProfile from './UserProfile';
 
 
 const Navbar =  (props) => {
@@ -36,7 +37,7 @@ const logout=() => {
     </div>
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
-    <p className='mb-0 ' style={{color:"white"}}>{login?<i class="fa-regular fa-user">&nbsp; </i>:""}{login? userName: " "}</p>&nbsp; &nbsp;
+    <UserProfile />
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </div>
 </nav>
