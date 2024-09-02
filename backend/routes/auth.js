@@ -106,7 +106,7 @@ router.put('/updateemail/:id',fetchuser, async (req, res)=>{
     if(email){newEmail.email = email}
 
     // Finding Email with Id to update or change the values;
-    let email1 = await User.findById(req.params.id);
+    let email1 = await User.findById(req.params.id).select("-password");
     if(!email1){
         return res.status(404).send("not Found");
     }
