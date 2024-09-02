@@ -104,8 +104,27 @@ catch{
 }
 getUser()
   
+
+// Edit a Email
+const editEmail = async (id, email) => {
+  // API call
+  const response = await fetch(`${host}/api/auth/updateemail${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token": localStorage.getItem('token')
+    },
+    body: JSON.stringify({ email }),
+  });
+  const res = response.json()
+  const newEmail = JSON.parse(JSON.stringify(notes))
+
+  userEmail(newEmail)
+  }
+
+
   return (
-    <noteContext.Provider value={{userEmail, userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
+    <noteContext.Provider value={{editEmail, userEmail, userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
       {props.children}
     </noteContext.Provider>
   )
