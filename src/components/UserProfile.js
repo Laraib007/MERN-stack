@@ -3,12 +3,22 @@ import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
 
 function UserProfile() {
-    const loginToken = localStorage.getItem("token")
+    const login = localStorage.getItem("token")
   const context = useContext(noteContext)
   const {userName} = context;
   return(
     <>
-    <p className='mb-0 ' style={{color:"white"}}>{login?<i class="fa-regular fa-user">&nbsp; </i>:""}{login? userName: " "}</p>&nbsp; &nbsp;
+    <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle d-none" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
+    <p className='mb-0 ' style={{color:"white"}}>{login?<i style={{marginRight: "0.3rem"}} className="fa-regular fa-user btn btn-secondary dropdown-toggle"></i>:""}{login? userName: " "}</p>&nbsp; &nbsp;
     </>
   
 )
