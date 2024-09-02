@@ -100,7 +100,6 @@ catch{
   
 }
 }
-getUser()
   
   return (
     <noteContext.Provider value={{userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
