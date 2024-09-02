@@ -7,7 +7,7 @@ function UserProfile() {
     const login = localStorage.getItem("token")
   const context = useContext(noteContext)
   const {userName} = context;
-  
+  console.log(userName)
   return(
     <>
     <div class="dropdown">
