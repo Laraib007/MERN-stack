@@ -101,7 +101,7 @@ router.post('/getuser', fetchuser, async (req, res) => {
 
 // Change Email
 router.put('/updateemail/:id',fetchuser, async (req, res)=>{
-    const {email, password} = req.body;
+    const {email, id} = req.body;
     const newEmail = {};
     if(email){newEmail.email = email}
 
@@ -110,11 +110,11 @@ router.put('/updateemail/:id',fetchuser, async (req, res)=>{
     if(!email1){
         return res.status(404).send("not Found");
     }
-console.log(email1.email)
-    if(email1.email.toString() !== req.body.email){
+console.log(req.body)
+    if(email1.email !== email1.email){
         return res.status(401).send("not Allowed") 
     }
     email1 = await User.findByIdAndUpdate(req.params.id, {$set: newEmail}, {new:true})
-    res.send(note)
+    res.send(email1)
 })
 module.exports = router
