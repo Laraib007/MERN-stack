@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
+import UserProfile from './UserProfile';
 
-function Notes(props) {
+function ChangeMail(props) {
     
   const context = useContext(noteContext)
   const {editEmail} = context;
@@ -12,6 +13,7 @@ function Notes(props) {
   const refClose = useRef(null)
 
   const [Email, setEmail] = useState()
+  
   const upDatemail =(currentEmail)=>{
     ref.current.click()
     setEmail({id: currentEmail._id, email: currentEmail.email})
@@ -19,13 +21,13 @@ function Notes(props) {
  
 
   const handleSubmit=(e)=>{
-    editNote(Note.id, Note.etitle, Note.edescription, Note.etag)
+    editEmail(Email.id, Email.email)
     refClose.current.click()
-    props.showAlert('Note Updated Sucessfully', "success")
+    props.showAlert('Email Updated Sucessfully', "success")
   }
   const onChange = (e)=>{
-    setNote({...Note, [e.target.name]: e.target.value})
-    console.log( setNote({...Note, [e.target.name]: e.target.value}))
+    setEmail({ [e.target.name]: e.target.value})
+    console.log( setEmail({ [e.target.name]: e.target.value}))
   } 
   return (
     <>
@@ -38,22 +40,14 @@ function Notes(props) {
   <div className="modal-dialog">
     <div className="modal-content">
       <div className="modal-header">
-        <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Note</h1>
+        <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Email</h1>
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div className="modal-body">
       <form className=' text-start'>
   <div className="form-group ">
-    <label className='my-1' htmlFor="exampleInputEmail1">Title</label>
-    <input type="text" className="form-control" id="etitle" name="etitle" value={Note.etitle} aria-describedby="emailHelp" placeholder="Enter Title" onChange={onChange} />
-  </div>
-  <div className="form-group">
-    <label className='my-1' htmlFor="exampleInputPassword1">Description</label>
-    <input type="text" className="form-control" id="edescription" name="edescription" value={Note.edescription}  placeholder="description" onChange={onChange} />
-  </div>
-  <div className="form-group ">
-    <label className='my-1' htmlFor="exampleInputEmail1">Tag</label>
-    <input type="text" className="form-control" id="etag" name="etag"value={Note.etag} placeholder="Enter Tag" onChange={onChange} />
+    <label className='my-1' htmlFor="exampleInputEmail1">Email</label>
+    <input type="email" className="form-control" id="etitle" name="etitle" value={Email.etitle} aria-describedby="emailHelp" placeholder="Enter Email" onChange={onChange} />
   </div>
  </form>
       </div>
@@ -65,15 +59,11 @@ function Notes(props) {
   </div>
 </div>
 
-    <h2>Your All Notes</h2>
-    <div className=' row ' style={{marginLeft: "7rem"}}>
-     <p style={{width: "88%"}}>{notes.length === 0 && "No Note added yet"}</p> 
-    {notes.map((note)=>{
+      
    
-    return <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/>  
-    })}</div>
+  <UserProfile showAlert={props.showAlert} upDatemail={upDatemail}/>
     </>
   )
 }
 
-export default Notes
+export default ChangeMail
