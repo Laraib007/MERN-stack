@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
+import UserProfile from './UserProfile';
 
 function Notes(props) {
     
@@ -74,7 +75,8 @@ function Notes(props) {
      <p style={{width: "88%"}}>{notes.length === 0 && "No Note added yet"}</p> 
     {notes.map((note)=>{
    
-    return <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/>  
+    return <Noteitem key={note._id} showAlert={props.showAlert} upDatenote={upDatenote} note={note}/> 
+    
     })}</div>
     </>
   )
