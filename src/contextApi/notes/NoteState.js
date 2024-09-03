@@ -117,7 +117,7 @@ const editEmail = async (id, email) => {
     body: JSON.stringify({ email }),
   });
   const res = response.json()
-  let email1 = await email;
+  let email1 = email;
   
   setEmail(email1)
   console.log(email1)
