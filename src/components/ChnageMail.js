@@ -15,6 +15,7 @@ function ChangeMail(props) {
   const [Email, setEmail] = useState()
   
   const upDatemail =(currentEmail)=>{
+    console.log("clicked working")
     ref.current.click()
     setEmail({id: currentEmail._id, email: currentEmail.email})
   }
@@ -31,7 +32,7 @@ function ChangeMail(props) {
   } 
   return (
     <>
-
+<UserProfile showAlert={props.showAlert} upDatemail={upDatemail}/>
 <button ref={ref} type="button" className="btn btn-primary d-none" data-bs-toggle="modal" data-bs-target="#exampleModal">
   Launch demo modal
 </button>
@@ -61,7 +62,7 @@ function ChangeMail(props) {
 
       
    
-  <UserProfile showAlert={props.showAlert} upDatemail={upDatemail}/>
+  
     </>
   )
 }

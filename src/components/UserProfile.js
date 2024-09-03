@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 function UserProfile(props) {
   const {upDatemail} = props
+  upDatemail()
     const ref = useRef(null)
     const login = localStorage.getItem("token")
   const context = useContext(noteContext)
