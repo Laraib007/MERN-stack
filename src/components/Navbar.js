@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { Link, useLocation } from "react-router-dom";
 import noteContext from '../contextApi/notes/noteContext';
 import UserProfile from './UserProfile';
+import Chnagemail from './Chnagemail'
 
 
 const Navbar =  (props) => {
@@ -35,6 +36,7 @@ const logout=() => {
         </li>
       </ul>
     </div>
+    <Chnagemail />
     <Link  className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`}  to={`${login ? "/" : "/Login"}`} role="button">Login</Link>
     <Link className={`btn btn-primary mx-1 ${login ? 'd-none': ''}`} to="/Signup" role="button">Signup</Link>
     <UserProfile showAlert={props.showAlert} />

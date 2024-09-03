@@ -28,7 +28,7 @@ const logout=() => {
     <li className='text-center'><a ><strong >Your Profile:</strong></a></li>
     <li><a class="dropdown-item" >User Name: <strong>{userName}</strong> </a></li>
     <li><a class="dropdown-item" >Email: <strong>{userEmail}</strong> </a></li>
-    <Chnagemail />
+   
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </ul>
 </div>
