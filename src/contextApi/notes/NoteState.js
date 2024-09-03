@@ -93,10 +93,10 @@ const getUser = async ()=>{
       const user = await response.json()
   const newNotes = JSON.stringify(user)
   const userNAme = user.user.name
-  const userEmail = user.user.email
+  const userEmail1 = user.user.email
   setUser(userNAme)
-  setEmail(userEmail)
-console.log(userEmail)
+  setEmail(userEmail1)
+console.log(userEmail1)
   }
 catch{
   
@@ -119,7 +119,7 @@ const editEmail = async (id, email) => {
   const res = response.json()
   const newEmail = JSON.parse(JSON.stringify(notes))
 
-  userEmail(newEmail)
+  setEmail(newEmail)
   }
 
 
