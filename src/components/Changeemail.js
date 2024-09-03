@@ -10,18 +10,15 @@ const Changeemail = (props) => {
   const ref = useRef(null)
   const refClose = useRef(null)
 
-  const [Email, setEmail] = useState({ etitle: ""})
+  const [Email, setEmail] = useState({ eEmail: ""})
   
- 
- 
-
   const handleSubmit=(currentEmail)=>{
-    editEmail(Email.id, Email.email)
+    
+    setEmail({id: currentEmail._id, eEmail: currentEmail.email})
+    editEmail(Email.id, Email.eEmail)
     refClose.current.click()
     props.showAlert('Email Updated Sucessfully', "success")
     
-    setEmail({id: currentEmail._id, etitle: currentEmail.email})
-    console.log(currentEmail)
   }
   const onChange = (e)=>{
     setEmail({ [e.target.name]: e.target.value})
@@ -45,7 +42,7 @@ const Changeemail = (props) => {
       <form className=' text-start'>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Email</label>
-    <input type="email" className="form-control" id="etitle" name="etitle" value={Email.etitle} aria-describedby="emailHelp" placeholder="Enter Email" onChange={onChange} />
+    <input type="email" className="form-control" id="eEmail" name="eEmail" value={Email.eEmail} aria-describedby="emailHelp" placeholder="Enter Email" onChange={onChange} />
   </div>
  </form>
       </div>
