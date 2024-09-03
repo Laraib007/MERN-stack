@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
 import { Link } from 'react-router-dom';
-import Chnagemail from './Chnagemail';
 
 function UserProfile(props) {
   
