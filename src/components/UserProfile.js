@@ -4,15 +4,21 @@ import Noteitem from './Noteitem';
 import { Link } from 'react-router-dom';
 
 function UserProfile(props) {
-  const {upDatemail} = props
+  
+  
     const ref = useRef(null)
     const login = localStorage.getItem("token")
   const context = useContext(noteContext)
   const {userName, userEmail} = context;
+  
 const logout=() => {
     ref.current.click()
   localStorage.removeItem("token")
-  props.showAlert('Logout Sucessfully', "success")}
+  props.showAlert('Logout Sucessfully', "success")
+  
+  
+}
+const {upDatemail} = props;
   return(
     <>
     
@@ -22,7 +28,7 @@ const logout=() => {
     <li className='text-center'><a ><strong >Your Profile:</strong></a></li>
     <li><a class="dropdown-item" >User Name: <strong>{userName}</strong> </a></li>
     <li><a class="dropdown-item" >Email: <strong>{userEmail}</strong> </a></li>
-    <i className="fa-solid fa-pen-to-square mx-2" onClick={() => { upDatemail() }}></i>
+    <i className="fa-solid fa-pen-to-square mx-2" onClick={()=> {upDatemail()} }></i>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </ul>
 </div>
