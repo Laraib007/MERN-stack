@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
 import Noteitem from './Noteitem';
 import { Link } from 'react-router-dom';
+import Chnagemail from './Chnagemail';
 
 function UserProfile(props) {
   
@@ -15,10 +16,9 @@ const logout=() => {
     ref.current.click()
   localStorage.removeItem("token")
   props.showAlert('Logout Sucessfully', "success")
-  
-  
 }
-const {upDatemail} = props;
+
+;
   return(
     <>
     
@@ -28,7 +28,7 @@ const {upDatemail} = props;
     <li className='text-center'><a ><strong >Your Profile:</strong></a></li>
     <li><a class="dropdown-item" >User Name: <strong>{userName}</strong> </a></li>
     <li><a class="dropdown-item" >Email: <strong>{userEmail}</strong> </a></li>
-    <i className="fa-solid fa-pen-to-square mx-2" onClick={()=> {upDatemail()} }></i>
+    <Chnagemail />
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </ul>
 </div>
