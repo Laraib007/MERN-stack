@@ -5,8 +5,8 @@ import Noteitem from './Noteitem';
 const Changeemail = (props) => {
     const context = useContext(noteContext)
   const {editEmail} = context;
- 
- 
+ const {response} = editEmail
+ console.log(response)
   const ref = useRef(null)
   const refClose = useRef(null)
 

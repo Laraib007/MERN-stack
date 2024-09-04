@@ -108,7 +108,6 @@ getUser()
 // Edit a Email
 const editEmail = async (email) => {
 // Fetching User ID to pass into URL to chnage email
-
 const responseForID = await fetch('http://localhost:5000/api/auth/getuser', {
   method: "POST",
   headers: {
@@ -130,13 +129,15 @@ const userID = user.user._id
     body: JSON.stringify({ email }),
     
   });
-  
+ 
   const resp = response.json()
   
   let email1 = email;
   
   setEmail(email1)
-  // console.log(email1)
+  if(response.ok){
+    console.log("response is ok")
+  }
   }
 
 
