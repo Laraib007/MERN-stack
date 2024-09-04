@@ -25,7 +25,7 @@ const Changeemail = (props) => {
   } 
   return (
     <>
-<h1 style={{marginTop: "5rem"}} >Chnage your email</h1>
+<h1 style={{marginTop: "5rem"}} >Change your email</h1>
 <button ref={ref} type="button" className="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
   Click here to chnage your email
 </button>
@@ -38,12 +38,13 @@ const Changeemail = (props) => {
         
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <p><strong>IMP:</strong> Note in case your added Email is already used by someone will not be update make sure you use your own email address</p>
+      
       <div className="modal-body">
       <form className=' text-start'>
+      <p><strong>IMP:</strong> Be carefull while entering New email address in case of adding space between your email or using invalid email type your account might be Lost forever!</p>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Email</label>
-    <input type="email" className="form-control" id="eEmail" name="eEmail" value={Email.eEmail} aria-describedby="emailHelp" placeholder="Enter Email" onChange={onChange} />
+    <input type="email" className="form-control" id="eEmail" name="eEmail" value={Email.eEmail} aria-describedby="emailHelp" placeholder="Enter Email" onChange={onChange} required/>
   </div>
  </form>
       </div>
