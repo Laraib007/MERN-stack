@@ -107,9 +107,8 @@ getUser()
 
 // Edit a Email
 const editEmail = async (id, email) => {
-  console.log(id)
   // API call
-  const response = await fetch(`${host}/api/auth/updateemail`, {
+  const response = await fetch(`${host}/api/auth/updateemail${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
