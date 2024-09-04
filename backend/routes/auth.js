@@ -111,14 +111,14 @@ router.put('/updateemail/:id', fetchuser, async (req, res) => {
 
     // Finding Email with Id to update or change the values;
 
-    let email1 = await User.findById(req.params.id).select("-password");
+    let email1 = await User.findById(req.params.id)
     if (!email1) {
         return res.status(404).send("not Found");
     }
     if (email1.email !== email1.email) {
         return res.status(401).send("not Allowed")
     }
-    email1 = await User.findByIdAndUpdate(req.params.id, { $set: newEmail }, { new: true })
+    email1 = await User.findByIdAndUpdate(req.params.id, { $set: newEmail }, { new: true }).select("-password")
     res.send(email1)
 })
 module.exports = router
