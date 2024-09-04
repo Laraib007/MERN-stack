@@ -115,8 +115,10 @@ const editEmail = async (id, email) => {
       "auth-token": localStorage.getItem('token')
     },
     body: JSON.stringify({ email }),
+    
   });
   const res = response.json()
+  console.log(res)
   let email1 = email;
   
   setEmail(email1)

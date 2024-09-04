@@ -20,6 +20,7 @@ const Changeemail = (props) => {
     props.showAlert('Email Updated Sucessfully', "success")
     
   }
+  console.log(eEmail)
   const onChange = (e)=>{
     setEmail({ [e.target.name]: e.target.value})
     console.log( setEmail({ [e.target.name]: e.target.value}))
