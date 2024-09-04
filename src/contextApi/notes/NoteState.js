@@ -106,13 +106,22 @@ getUser()
   
 
 // Edit a Email
-const editEmail = async (id, email) => {
+const editEmail = async (email) => {
 // Fetching User ID to pass into URL to chnage email
 
+const responseForID = await fetch('http://localhost:5000/api/auth/getuser', {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "auth-token": localStorage.getItem('token')
+  }
+});
+    const user = await responseForID.json()
+const userID = user.user._id
 
 
   // API call  
-  const response = await fetch(`${host}/api/auth/updateemail${id}`, {
+  const response = await fetch(`${host}/api/auth/updateemail/${userID}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -121,6 +130,8 @@ const editEmail = async (id, email) => {
     body: JSON.stringify({ email }),
     
   });
+  
+console.log(response)
   const res = response.json()
   let email1 = email;
   
