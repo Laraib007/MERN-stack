@@ -8,6 +8,7 @@ const NoteState = (props) => {
   const [notes, setNotes] = useState(InitialNotes)
   const [userName, setUser] = useState()
   const [userEmail, setEmail] = useState()
+  const [res, setRes] = useState()
   // Fetching all Notes
     const getAllnotes = async () => {
     // API call
@@ -129,20 +130,18 @@ const userID = user.user._id
     body: JSON.stringify({ email }),
     
   });
- 
   const resp = response.json()
   
   let email1 = email;
   
   setEmail(email1)
-  if(response.ok){
-    console.log("response is ok")
-  }
+  setRes(response.status)
+  
   }
 
 
   return (
-    <noteContext.Provider value={{editEmail, userEmail, userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
+    <noteContext.Provider value={{editEmail, userEmail, res, userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
       {props.children}
     </noteContext.Provider>
   )

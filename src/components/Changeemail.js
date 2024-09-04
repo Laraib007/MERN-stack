@@ -4,9 +4,8 @@ import Noteitem from './Noteitem';
 
 const Changeemail = (props) => {
     const context = useContext(noteContext)
-  const {editEmail} = context;
- const {response} = editEmail
- console.log(response)
+  const {editEmail, res} = context;
+ console.log(res)
   const ref = useRef(null)
   const refClose = useRef(null)
 
@@ -15,15 +14,14 @@ const Changeemail = (props) => {
   const handleSubmit=(currentEmail)=>{
       setEmail({ eEmail: currentEmail.email})
     editEmail(Email.eEmail)
-    refClose.current.click()
-    props.showAlert('Email Updated Sucessfully', "success")
-    
-    
-    
+    refClose.current.click()  
+    if(res == 200){
+      props.showAlert('Email Update Sucessfully', "success") 
+    }
+    else props.showAlert('Email  Already Used', "danger")
   }
   const onChange = (e)=>{
     setEmail({ [e.target.name]: e.target.value})
-    console.log( setEmail({ [e.target.name]: e.target.value}))
   } 
   return (
     <>
@@ -37,8 +35,10 @@ const Changeemail = (props) => {
     <div className="modal-content">
       <div className="modal-header">
         <h1 className="modal-title fs-5" id="exampleModalLabel">Edit Email</h1>
+        
         <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
+      <p><strong>IMP:</strong> Note in case your added Email is already used by someone will not be update make sure you use your own email address</p>
       <div className="modal-body">
       <form className=' text-start'>
   <div className="form-group ">
