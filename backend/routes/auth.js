@@ -101,7 +101,7 @@ router.post('/getuser', fetchuser, async (req, res) => {
 
 // Change Email
 router.put('/updateemail/:id',fetchuser, async (req, res)=>{
-    const {email, _id} = req.body;
+    const {email} = req.body;
     const newEmail = {};
     if(email){newEmail.email = email}
 

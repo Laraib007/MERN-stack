@@ -107,7 +107,11 @@ getUser()
 
 // Edit a Email
 const editEmail = async (id, email) => {
-  // API call
+// Fetching User ID to pass into URL to chnage email
+
+
+
+  // API call  
   const response = await fetch(`${host}/api/auth/updateemail${id}`, {
     method: "PUT",
     headers: {
