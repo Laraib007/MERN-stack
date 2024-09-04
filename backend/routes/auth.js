@@ -101,7 +101,7 @@ router.post('/getuser', fetchuser, async (req, res) => {
 
 // Change Email
 router.put('/updateemail/:id',fetchuser, async (req, res)=>{
-    const {email, id} = req.body;
+    const {email, _id} = req.body;
     const newEmail = {};
     if(email){newEmail.email = email}
 
@@ -110,7 +110,6 @@ router.put('/updateemail/:id',fetchuser, async (req, res)=>{
     if(!email1){
         return res.status(404).send("not Found");
     }
-console.log(req.body)
     if(email1.email !== email1.email){
         return res.status(401).send("not Allowed") 
     }

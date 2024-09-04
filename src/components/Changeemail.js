@@ -14,13 +14,12 @@ const Changeemail = (props) => {
   
   const handleSubmit=(currentEmail)=>{
     
-    setEmail({id: currentEmail._id, eEmail: currentEmail.email})
-    editEmail(Email.id, Email.eEmail)
+    setEmail({ eEmail: currentEmail.email})
+    editEmail(Email.eEmail)
     refClose.current.click()
     props.showAlert('Email Updated Sucessfully', "success")
     
   }
-  console.log(eEmail)
   const onChange = (e)=>{
     setEmail({ [e.target.name]: e.target.value})
     console.log( setEmail({ [e.target.name]: e.target.value}))
