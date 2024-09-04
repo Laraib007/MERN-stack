@@ -13,11 +13,12 @@ const Changeemail = (props) => {
   const [Email, setEmail] = useState({ eEmail: ""})
   
   const handleSubmit=(currentEmail)=>{
-    
-    setEmail({ eEmail: currentEmail.email})
+      setEmail({ eEmail: currentEmail.email})
     editEmail(Email.eEmail)
     refClose.current.click()
     props.showAlert('Email Updated Sucessfully', "success")
+    
+    
     
   }
   const onChange = (e)=>{

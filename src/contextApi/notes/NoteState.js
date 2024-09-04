@@ -131,8 +131,8 @@ const userID = user.user._id
     
   });
   
-console.log(response)
-  const res = response.json()
+  const resp = response.json()
+  
   let email1 = email;
   
   setEmail(email1)
