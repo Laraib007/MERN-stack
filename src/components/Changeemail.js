@@ -1,5 +1,7 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
+import Noteitem from './Noteitem';
+import { Link } from 'react-router-dom';
 import Changepassword from './ChangePassword';
 
 const Changeemail = (props) => {
@@ -55,7 +57,9 @@ const Changeemail = (props) => {
     </div>
   </div>
 </div>
-      <Changepassword />
+<Link className={`btn btn-primary mx-1 `} to="/Changepassword" role="button">Chnage Your Password</Link>
+    
+      
   </>  
   )
 }
