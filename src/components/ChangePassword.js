@@ -44,7 +44,7 @@ const Changepassword = (props) => {
       <p><strong>IMP:</strong> Be carefull while entering New Password in case of forgetting password your account might be Lost forever!</p>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Email</label>
-    <input type="email" className="form-control" id="eEmail" name="eEmail" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter Email" onChange={onChange} required/>
+    <input type="email" className="form-control" id="eEmail" name="eEmail" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter New Password" onChange={onChange} required/>
   </div>
  </form>
       </div>
