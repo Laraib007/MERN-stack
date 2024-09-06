@@ -129,7 +129,7 @@ router.put('/updatepassword/:id', fetchuser, async (req, res) => {
         // creating new user after validating 
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
-        let user = await User.updateOne({
+        let user = await User.findByIdAndUpdate(req.params.id,{
             password: hash
         })
         const data = {
