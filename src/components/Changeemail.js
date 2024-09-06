@@ -27,7 +27,7 @@ const Changeemail = (props) => {
   } 
   return (
     <>
-<h1 style={{marginTop: "5rem"}} >Change your email</h1>
+<h1 style={{marginTop: "5rem"}} >Change your Login Info</h1>
 <button ref={ref} type="button" className="btn btn-primary " data-bs-toggle="modal" data-bs-target="#exampleModal">
   Click here to chnage your email
 </button>
