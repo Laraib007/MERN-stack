@@ -126,18 +126,11 @@ router.put('/updateemail/:id', fetchuser, async (req, res) => {
 router.put('/updatepassword/:id', fetchuser, async (req, res) => {
    
     try {
-        // finding user exist or not
-        let user = await User.findOne({ email: req.body.email })
-        if (user) {
-            return res.status(404).json({ success, Msg: "Sorry user with this email is already exist" })
-        }
         // creating new user after validating 
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(req.body.password, salt);
-        user = await User.create({
-            name: req.body.name,
-            password: hash,
-            email: req.body.email
+        let user = await User.updateOne({
+            password: hash
         })
         const data = {
             user: {
