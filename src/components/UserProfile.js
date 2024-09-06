@@ -23,7 +23,8 @@ const logout=() => {
   <ul style={{marginTop: "1rem"}} class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start" aria-labelledby="dropdownMenuButton1">
     <li className='text-center'><a ><strong >Your Profile:</strong></a></li>
     <li><a class="dropdown-item" >User Name: <strong>{userName}</strong> </a></li>
-    <li><a class="dropdown-item" >Email: <strong>{userEmail}</strong> <Link  to='/Changemail'><i className="fa-solid fa-pen-to-square mx-2"></i></Link> 
+    <li><a class="dropdown-item" >Email: <strong>{userEmail}</strong>
+    <div><Link  to='/Changemail'><i className="  mx-1">Change Email or Password</i></Link> </div> 
     </a></li>
     <Link className={`btn btn-primary mx-1 ${!login ? 'd-none': ''}`} onClick={logout} to="/Login" role="button">Logout</Link>
   </ul>
