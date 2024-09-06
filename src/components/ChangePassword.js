@@ -11,9 +11,9 @@ const Changepassword = (props) => {
 
   const [Password, setPassword] = useState({ ePassword: ""})
   
-  const handleSubmit=(currentEmail)=>{
-    setPassword({ ePassword: currentEmail.password})
-      editPassword(Password.eEmail)
+  const handleSubmit=(currentPassword)=>{
+    setPassword({ ePassword: currentPassword.password})
+      editPassword(Password.ePassword)
     refClose.current.click()  
     if(res == 200){
       props.showAlert('Password Update Sucessfully', "success") 
@@ -43,8 +43,8 @@ const Changepassword = (props) => {
       <form className=' text-start'>
       <p><strong>IMP:</strong> Be carefull while entering New Password in case of forgetting password your account might be Lost forever!</p>
   <div className="form-group ">
-    <label className='my-1' htmlFor="exampleInputEmail1">Email</label>
-    <input type="email" className="form-control" id="eEmail" name="eEmail" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter New Password" onChange={onChange} required/>
+    <label className='my-1' htmlFor="exampleInputEmail1">Password</label>
+    <input type="text" className="form-control" id="ePassword" name="ePassword" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter New Password" onChange={onChange} required/>
   </div>
  </form>
       </div>
