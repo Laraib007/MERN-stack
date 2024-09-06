@@ -138,10 +138,44 @@ const userID = user.user._id
   setRes(response.status)
   
   }
+// Edit a Password
+const editPassword = async (password) => {
+  // Fetching User ID to pass into URL to chnage email
+  const responseForID = await fetch('http://localhost:5000/api/auth/getuser', {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "auth-token": localStorage.getItem('token')
+    }
+  });
+      const user = await responseForID.json()
+  const userID = user.user._id
+  
+  
+    // API call  
+    const response = await fetch(`${host}/api/auth/updatepassword/${userID}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token": localStorage.getItem('token')
+      },
+      body: JSON.stringify({ password }),
+      
+    });
+    const resp = response.json()
+    
+    let password1 = password;
+    
+    setEmail(password1)
+    setRes(response.status)
+    
+    }
+
+
 
 
   return (
-    <noteContext.Provider value={{editEmail, userEmail, res, userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
+    <noteContext.Provider value={{editPassword, editEmail, userEmail, res, userName, notes, addNote, deleteNote, editNote, getAllnotes, getUser }}>
       {props.children}
     </noteContext.Provider>
   )
