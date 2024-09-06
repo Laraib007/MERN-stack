@@ -11,9 +11,11 @@ const Changepassword = (props) => {
   const [Password, setPassword] = useState({ ePassword: ""})
   
   const handleSubmit=(currentPassword)=>{
+
     setPassword({ ePassword: currentPassword.password})
       editPassword(Password.ePassword)
     refClose.current.click()  
+   
     if(res == 200){
       props.showAlert('Password Update Sucessfully', "success") 
     }
@@ -22,9 +24,7 @@ const Changepassword = (props) => {
   const onChange = (e)=>{
     setPassword({ [e.target.name]: e.target.value})
   } 
-  if(Password.cPassword !== Password.ePassword){
-console.log("not match")
-  }
+ 
   
   return (
     <>
@@ -48,7 +48,6 @@ console.log("not match")
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Password</label>
     <input type="text" className="form-control" id="ePassword" name="ePassword" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter New Password" onChange={onChange} required/>
-    <input type="text" className="form-control my-2" id="cpassword" name="cpassword" value={Password.cPassword} aria-describedby="emailHelp" placeholder="Confirm Password" onChange={onChange} required/>
   </div>
  </form>
       </div>
