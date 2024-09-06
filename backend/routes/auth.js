@@ -121,4 +121,43 @@ router.put('/updateemail/:id', fetchuser, async (req, res) => {
     email1 = await User.findByIdAndUpdate(req.params.id, { $set: newEmail }, { new: true }).select("-password")
     res.send(email1)
 })
+
+// Createing Edit password Route || Login Required.
+router.put('/updatepassword/:id', fetchuser, async (req, res) => {
+    async (req, res) => {
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(404).json({ errors: errors.array() })
+        }
+
+        try {
+            const { email, password } = req.body;
+            const user = await User.findOne({ email })
+            if (!user) {
+                return res.status(400).json({ error: "Please enter valid credentials" })
+            }
+            const passwordCompare = await bcrypt.compare(password, user.password)
+            if (!passwordCompare) {
+                sucess = false
+                return res.status(400).json({ sucess, error: "Please enter valid credentials" })
+            }
+
+            const data = {
+                user: {
+                    id: user.id
+                }
+            }
+            const token = jwt.sign(data, 'shhhhh');
+            success = true
+            res.json({ success, token })
+            // catching error 
+        } catch (error) {
+            console.error({ error: error.message })
+            res.status(500).send("Some internal error")
+
+        }
+    }
+})
+
+
 module.exports = router
