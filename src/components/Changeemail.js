@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react'
 import noteContext from '../contextApi/notes/noteContext';
-import Noteitem from './Noteitem';
+import Changepassword from './ChangePassword';
 
 const Changeemail = (props) => {
     const context = useContext(noteContext)
@@ -55,7 +55,7 @@ const Changeemail = (props) => {
     </div>
   </div>
 </div>
-      
+      <Changepassword />
   </>  
   )
 }
