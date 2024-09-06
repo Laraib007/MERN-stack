@@ -8,7 +8,6 @@ const Changepassword = (props) => {
  console.log(res)
   const ref = useRef(null)
   const refClose = useRef(null)
-
   const [Password, setPassword] = useState({ ePassword: ""})
   
   const handleSubmit=(currentPassword)=>{
@@ -23,9 +22,10 @@ const Changepassword = (props) => {
   const onChange = (e)=>{
     setPassword({ [e.target.name]: e.target.value})
   } 
-  if(Password.ePassword !== Password.cpassword){
-    return props.showAlert('Password and Confirm password not match', "danger")
+  if(Password.cPassword !== Password.ePassword){
+console.log("not match")
   }
+  
   return (
     <>
 <h1 style={{marginTop: "5rem"}} >Change your Password</h1>
@@ -47,8 +47,8 @@ const Changepassword = (props) => {
       <p><strong>IMP:</strong> Be carefull while entering New Password in case of forgetting password your account might be Lost forever!</p>
   <div className="form-group ">
     <label className='my-1' htmlFor="exampleInputEmail1">Password</label>
-    <input type="text" className="form-control" id="ePassword" name="ePassword" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter New Password"  required/>
-    <input type="text" className="form-control my-2" id="Cpas" name="Cpas" value={Password.cpassword} aria-describedby="emailHelp" placeholder="Confirm Password" onChange={onChange} required/>
+    <input type="text" className="form-control" id="ePassword" name="ePassword" value={Password.ePassword} aria-describedby="emailHelp" placeholder="Enter New Password" onChange={onChange} required/>
+    <input type="text" className="form-control my-2" id="cpassword" name="cpassword" value={Password.cPassword} aria-describedby="emailHelp" placeholder="Confirm Password" onChange={onChange} required/>
   </div>
  </form>
       </div>
