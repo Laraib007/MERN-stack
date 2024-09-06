@@ -124,38 +124,35 @@ router.put('/updateemail/:id', fetchuser, async (req, res) => {
 
 // Createing Edit password Route || Login Required.
 router.put('/updatepassword/:id', fetchuser, async (req, res) => {
-    async (req, res) => {
-        const errors = validationResult(req);
-        if (!errors.isEmpty()) {
-            return res.status(404).json({ errors: errors.array() })
+   
+    try {
+        // finding user exist or not
+        let user = await User.findOne({ email: req.body.email })
+        if (user) {
+            return res.status(404).json({ success, Msg: "Sorry user with this email is already exist" })
         }
-
-        try {
-            const { email, password } = req.body;
-            const user = await User.findOne({ email })
-            if (!user) {
-                return res.status(400).json({ error: "Please enter valid credentials" })
+        // creating new user after validating 
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(req.body.password, salt);
+        user = await User.create({
+            name: req.body.name,
+            password: hash,
+            email: req.body.email
+        })
+        const data = {
+            user: {
+                id: user.id
             }
-            const passwordCompare = await bcrypt.compare(password, user.password)
-            if (!passwordCompare) {
-                sucess = false
-                return res.status(400).json({ sucess, error: "Please enter valid credentials" })
-            }
-
-            const data = {
-                user: {
-                    id: user.id
-                }
-            }
-            const token = jwt.sign(data, 'shhhhh');
-            success = true
-            res.json({ success, token })
-            // catching error 
-        } catch (error) {
-            console.error({ error: error.message })
-            res.status(500).send("Some internal error")
-
         }
+        const token = await jwt.sign(data, 'shhhhh');
+        success = true
+        console.log(success, token)
+        res.json({ success, token })
+        // catching error 
+    } catch (error) {
+        console.error({ error: error.message })
+        res.status(500).send("Some internal error")
+
     }
 })
 
