@@ -5,7 +5,7 @@ var cors = require('cors')
 connectToMongoose()
 
 const app = express()
-const port = process.env.PORT || 5000
+const port = "https://inotebook-2.vercel.app/"
 
 
 
