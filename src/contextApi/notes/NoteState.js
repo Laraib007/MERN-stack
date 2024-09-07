@@ -3,7 +3,7 @@ import noteContext from "./noteContext";
 import Navbar from "../../components/Navbar";
 
 const NoteState = (props) => {
-  const host = "http://inotebook-2.vercel.app"
+  const host = "https://inotebook-2.vercel.app"
   const InitialNotes =[]
   const [notes, setNotes] = useState(InitialNotes)
   const [userName, setUser] = useState()
@@ -83,7 +83,7 @@ const NoteState = (props) => {
 
 // authenticate user and login required
 const getUser = async ()=>{
-  const response = await fetch('http://inotebook-2.vercel.app/api/auth/getuser', {
+  const response = await fetch('https://inotebook-2.vercel.app/api/auth/getuser', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -109,7 +109,7 @@ getUser()
 // Edit a Email
 const editEmail = async (email) => {
 // Fetching User ID to pass into URL to chnage email
-const responseForID = await fetch('http://inotebook-2.vercel.app/api/auth/getuser', {
+const responseForID = await fetch('https://inotebook-2.vercel.app/api/auth/getuser', {
   method: "POST",
   headers: {
     "Content-Type": "application/json",
@@ -141,7 +141,7 @@ const userID = user.user._id
 // Edit a Password
 const editPassword = async (password) => {
   // Fetching User ID to pass into URL to chnage email
-  const responseForID = await fetch('http://inotebook-2.vercel.app/api/auth/getuser', {
+  const responseForID = await fetch('https://inotebook-2.vercel.app/api/auth/getuser', {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
